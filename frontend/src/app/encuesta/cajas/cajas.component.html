@@ -1,0 +1,139 @@
+<mat-progress-bar mode="determinate" value="61.105"></mat-progress-bar>
+<div id="container" class="container">
+  
+  <div class="row justify-content-center">
+    <mat-card class="col-10 mt-5 mat-elevation-z8">
+      <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
+        <div class="row">
+          <h2 class="text-center">
+            ¿En el semestre actual, utilizaste el servicio de Cajas?
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="row justify-content-evenly" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" (click)="servicioUtilizado()"/>
+            <label class="btn btn-outline-success col-3" for="btnradio1"> Si </label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" (click)="servicioNoUtilizado()"/>
+            <label class="btn btn-outline-danger col-3" for="btnradio2"> No </label>
+          </div>
+        </div>
+
+        <!-- pregunta 1 -->
+        <div *ngIf="isEnabled != true; else ServicioUtilizado"></div>
+        <ng-template #ServicioUtilizado>
+          <div class="row justify-content-center mt-5">
+            <h3 class="text-center">
+              ¿En cuanto al horario de atención te consideras?
+            </h3>
+            {{ extraEscolares.horario }}
+            <div class="row justify-content-center">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario">
+                <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">No satisfecho</div>
+                </mat-button-toggle>
+                <mat-button-toggle value="Satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">Satisfecho</div>
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </div>
+
+          <!-- pregunta 2 -->
+          <div class="row justify-content-center mt-5">
+            <h3 class="text-center">
+              Disponibilidad del personal (Existe personal en el Área)
+            </h3>
+            <div class="row justify-content-center">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad">
+                <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">No satisfecho</div>
+                </mat-button-toggle>
+                <mat-button-toggle value="Satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">Satisfecho</div>
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </div>
+
+          <!-- pregunta 3 -->
+          <div class="row justify-content-center mt-5">
+            <h3 class="text-center">
+              Atención del personal (Te atiende el personal)
+            </h3>
+            <div class="row justify-content-center">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion">
+                <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">No satisfecho</div>
+                </mat-button-toggle>
+                <mat-button-toggle value="Satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">Satisfecho</div>
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </div>
+
+          <!-- pregunta 4 -->
+          <div class="row justify-content-center mt-5">
+            <h3 class="text-center">
+              Amabilidad del personal (Hay un trato amable)
+            </h3>
+            <div class="row justify-content-center">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad">
+                <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">No satisfecho</div>
+                </mat-button-toggle>
+                <mat-button-toggle value="Satisfecho" class="col-4 col-md-3 col-lg-2">
+                  <div class="row justify-content-center">
+                    <img src="../../../assets/satisfecho.svg" class="icono" alt=""/>
+                  </div>
+                  <div class="row justify-content-center">Satisfecho</div>
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </div>
+
+          <!-- comentarios -->
+          <div class="row justify-content-center mt-5">
+            <h3 class="text-center">
+              Comentarios
+            </h3>
+            <div class="row justify-content-center">
+              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill">
+            <mat-label>Deja un comentario.</mat-label>
+            <textarea matInput placeholder=""></textarea>
+          </mat-form-field>
+            </div>
+          </div>
+          
+        </ng-template>
+
+        <div class="d-grid d-md-flex justify-content-md-end mt-5">
+          <button class="btn azul mx-5" type="button" (click)="siguiente()">
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

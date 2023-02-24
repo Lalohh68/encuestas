@@ -1,0 +1,56 @@
+<div id="container" class="container">
+    <div class="row justify-content-center">
+      
+    <mat-card class="col-10 col-md-6 col-lg-4 mt-5 mat-elevation-z8">
+      <form  [formGroup]="form" (ngSubmit)="iniciar()" novalidate>
+      <div class="row justify-content-center">
+        <div class="d-grid gap-2 col-8 mx-auto">
+          <mat-form-field appearance="fill" class="my-4 ">
+        <mat-label>Numero de control</mat-label>
+        <input matInput placeholder="Numero de control" formControlName="numeroDeControl" name="numeroDeControl" [(ngModel)]="alumno.numControl">
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+        </div>
+        
+      </div>
+      <div class="row justify-content-center">
+        <div class="d-grid gap-2 col-8 mx-auto">
+    <mat-form-field appearance="fill" class="mb-4">
+        <mat-label>Carrera</mat-label>
+        <mat-select formControlName="carrera" name="carrera" [(ngModel)]="alumno.carrera">
+          <mat-option *ngFor="let carrera of carreras" [value]="carrera.value">
+            {{carrera.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error >Selecciona una ingeniería</mat-error>
+      </mat-form-field>
+    
+        </div>
+        
+      </div>
+      
+      <p></p>
+      <button mat-raised-button (click)="consultar()">Empezar</button>
+    </form>
+    </mat-card>
+    </div>
+    </div>
+
+
+
+    <div class="modal" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title">ya realizaste las encuestas!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>{{getFolio | json}}</h2>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>

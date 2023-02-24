@@ -1,0 +1,23 @@
+INSERT INTO `encuesta_servicios`.`becas` (`id_alumno`, `horario`, `disponibilidad_personal`, `atencion_personal`, `amabilidad_personal`) VALUES ('1', 'no satisfecho', 'no satisfecho', 'no satisfecho', 'satisfecho');
+
+SELECT folio FROM encuesta_servicios.alumnos where num_control="?";
+
+
+const consultarFolio = async (req, res) => {
+  const numeroControl = req.params.numControl;
+  try {
+    const result = await services.consultarFolio(String(numeroControl));
+    res.status(201);
+    if (result == "") {
+      res.json("aun no responde la encuesta");
+    } else {
+      res.json(result);
+    }
+  } catch (error) {
+    res.status(400);
+    res.send(error.message);
+  }
+};
+
+
+pQUv2Marvov

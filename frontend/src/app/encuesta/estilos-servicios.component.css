@@ -1,0 +1,45 @@
+mat-button-toggle-group {
+    box-shadow: none;
+    border: none;
+  }
+  
+  mat-button-toggle-group {
+    box-shadow: none;
+  }
+  
+  mat-button-toggle {
+    border: 1px rgba(0, 0, 0, 0) solid !important;
+    margin-top: 5px !important;
+    padding: 0 5px !important;
+    z-index: 3 !important;
+    filter: grayscale(100%);
+  }
+  
+  mat-button-toggle:hover {
+    border: 1px #000 solid !important;
+    background-color: #c5c5c5 !important;
+    border-radius: 5px !important;
+    filter: grayscale(0);
+  }
+  
+  .mat-button-toggle-checked {
+    border: 1px #000 solid !important;
+    border-radius: 5px !important;
+    background-color: #c6c6c6;
+    filter: grayscale(0);
+  }
+  
+  .mat-button-toggle-input {
+    background-color: none !important;
+    padding-left: 32px !important;
+  }
+  
+  .icono {
+    width: 80px;
+  }
+  
+  .azul {
+    background-color: #1b396a;
+    color: #ffffff;
+  }
+  
