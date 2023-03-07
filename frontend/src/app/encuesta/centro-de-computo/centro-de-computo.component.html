@@ -1,13 +1,12 @@
 <mat-progress-bar mode="determinate" value="27.775"></mat-progress-bar>
 <div id="container" class="container">
-  {{alumno |json}}
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
         <div class="row">
-          <h2 class="text-center">
+          <h3 class="text-center fw-bold">
             ¿En el semestre actual, utilizaste el servicio del Centro de cómputo?
-          </h2>
+          </h3>
         </div>
         <div class="row justify-content-center">
           <div class="row justify-content-evenly" role="group" aria-label="Basic radio toggle button group">
@@ -22,7 +21,7 @@
         <div *ngIf="isEnabled != true; else ServicioUtilizado"></div>
         <ng-template #ServicioUtilizado>
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               ¿En cuanto al horario de atención te consideras?
             </h3>
             <div class="row justify-content-center">
@@ -45,7 +44,7 @@
 
           <!-- pregunta 2 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
             <div class="row justify-content-center">
@@ -68,7 +67,7 @@
 
           <!-- pregunta 3 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               Atención del personal (Te atiende el personal)
             </h3>
             <div class="row justify-content-center">
@@ -91,7 +90,7 @@
 
           <!-- pregunta 4 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               Amabilidad del personal (Hay un trato amable)
             </h3>
             <div class="row justify-content-center">

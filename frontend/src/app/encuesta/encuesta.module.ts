@@ -36,6 +36,10 @@ import { PsicologicoComponent } from './psicologico/psicologico.component';
 import { MedicoComponent } from './medico/medico.component';
 import { AsesoriasAcademicasComponent } from './asesorias-academicas/asesorias-academicas.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {GraficasComponent} from '../encuestas/graficas/graficas.component';
+import {NgApexchartsModule} from 'ng-apexcharts'
+import * as ApexCharts from 'apexcharts';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   
@@ -54,7 +58,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSnackBarModule,
     MatIconModule,FormsModule, ReactiveFormsModule,
     MatStepperModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgApexchartsModule,
+    NgChartsModule
   ],declarations: [
     InicioComponent,
     ExtraescolaresComponent,
@@ -74,7 +80,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     PsicologicoComponent,
     MedicoComponent,
     AsesoriasAcademicasComponent,
-    
+    GraficasComponent
   ]
 })
 export class EncuestaModule { }

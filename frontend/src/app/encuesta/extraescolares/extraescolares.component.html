@@ -1,11 +1,10 @@
 <mat-progress-bar mode="determinate" value="5.555"  ></mat-progress-bar>
-{{alumno |json}}
 <div id="container" class="container">
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
         <div class="row">
-          <h3 class="text-center ">
+          <h3 class="text-center fw-bold">
             ¿En el semestre actual, utilizaste servicio de Actividades
             Extraescolares (Clubes)?
           </h3>
@@ -23,7 +22,7 @@
         <div *ngIf="isEnabled != true; else ServicioUtilizado"></div>
         <ng-template #ServicioUtilizado>
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               ¿En cuanto al horario de atención te consideras?
             </h3>
             <div class="row justify-content-center">

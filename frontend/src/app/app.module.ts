@@ -34,6 +34,8 @@ exports:[
   MatIconModule,
   MatProgressBarModule
 ],
+declarations: [
+],
 
 })
 export class MaterialModule{} 

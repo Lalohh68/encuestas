@@ -19,6 +19,7 @@ import { PsicologicoComponent } from './psicologico/psicologico.component';
 import { MedicoComponent } from './medico/medico.component';
 import { BecasComponent } from './becas/becas.component';
 import { AsesoriasAcademicasComponent } from './asesorias-academicas/asesorias-academicas.component';
+import { GraficasComponent } from "../encuestas/graficas/graficas.component";
 
 export const EncuestaRoutingModule: Routes = [
     {
@@ -102,7 +103,11 @@ export const EncuestaRoutingModule: Routes = [
             path:'asesorias_academicas',
             component: AsesoriasAcademicasComponent
           }
-          
+          ,
+          {
+            path:'grafica',
+            component: GraficasComponent
+          }
         ]
         
         },
