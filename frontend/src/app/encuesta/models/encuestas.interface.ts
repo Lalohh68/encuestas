@@ -11,3 +11,4 @@ export interface respuestaAlumno{
 export interface respuestaRegistro{
     idAlumno:number
 }
+

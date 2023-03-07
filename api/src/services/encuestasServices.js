@@ -3,7 +3,7 @@ import { getConnection } from "./../database/db";
 async function consultarFolio(numControl) {
   const connection = await getConnection();
   const result = await connection.query(
-    "SELECT folio FROM encuesta_servicios.alumnos where num_control=? and folio IS NOT NULL",numControl);
+    "SELECT id_alumno FROM encuesta_servicios.alumnos where num_control=?",numControl); //and folio IS NOT NULL
     return await result
 }
 async function consultarId(numControl) {
@@ -83,7 +83,7 @@ async function createEncuestaClubes(idAlumno,horario,disponibilidad,atencion,ama
   return result;
 }
 
-async function createEncuestacontrolEscolar(idAlumno,horario,disponibilidad,atencion,amabilidad,comentarios) {
+async function createEncuestaControlEscolar(idAlumno,horario,disponibilidad,atencion,amabilidad,comentarios) {
   const connection = await getConnection();
   const result = await connection.query(
     `INSERT INTO control_escolar (id_alumno, horario, disponibilidad_personal, atencion_personal, amabilidad_personal,comentarios) VALUES ('${idAlumno}', '${horario}', '${disponibilidad}', '${atencion}', '${amabilidad}','${comentarios}');`);
@@ -140,4 +140,4 @@ async function createEncuestaTutorias(idAlumno,horario,disponibilidad,atencion,a
 }
 
 
-export { consultarFolio, consultarId, registrarAlumno, createEncuestaBecas,createEncuestaAsesoriasAcademicas,createEncuestaBiblioteca,createEncuestaCafeteria1,createEncuestaCafeteria2,createEncuestaCajas,createEncuestaCentroComputo,createEncuestaCentroCopiado,createEncuestaClubes,createEncuestaCoordinadorCarreras,createEncuestaIdiomas,createEncuestaMedico,createEncuestaPsicologico,createEncuestaResidencias,createEncuestaServicioSocial,createEncuestaTutorias,createEncuestacontrolEscolar };
+export { consultarFolio, consultarId, registrarAlumno, createEncuestaBecas,createEncuestaAsesoriasAcademicas,createEncuestaBiblioteca,createEncuestaCafeteria1,createEncuestaCafeteria2,createEncuestaCajas,createEncuestaCentroComputo,createEncuestaCentroCopiado,createEncuestaClubes,createEncuestaCoordinadorCarreras,createEncuestaIdiomas,createEncuestaMedico,createEncuestaPsicologico,createEncuestaResidencias,createEncuestaServicioSocial,createEncuestaTutorias,createEncuestaControlEscolar };

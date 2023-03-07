@@ -3,7 +3,7 @@ import { Component, Inject, OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EncuestasService } from "../services/encuesta.service";
+import { EncuestasService, encuesta } from "../services/encuesta.service";
 import { Subject } from 'rxjs';
 declare const $: any;
 
@@ -17,26 +17,23 @@ export class ExtraescolaresComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
     state: {
-      numControl:null,
-      carrera:null,
-      clubes:{
-        horario:null,
-        disponibilidad: null,
-        atencion:null,
-        amabilidad:null
-      }
     }
   }
 
-  clubes:any=[]
+  clubes:encuesta ={
+    idAlumno:"",
+    horario: "",
+    disponibilidad: "",
+    atencion:"",
+    amabilidad:"",
+    comentarios:""
+    }
   preguntasCompletas: boolean = false;
-  extraEscolares = {
-    horario: null,
-  };
+  
   disable: boolean = false;
   isEnabled: any;
   form;
-  datos:any=[]
+  alumno:any=[]
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -48,10 +45,11 @@ export class ExtraescolaresComponent implements OnInit {
       disponibilidad: ['', Validators.required],
       atencion: ['', Validators.required],
       amabilidad: ['', Validators.required],
+      comentarios: ['']
     });
     
     const navigation=this.router.getCurrentNavigation();
-    this.datos= navigation?.extras?.state;
+    this.alumno= navigation?.extras?.state;
     
   }
 
@@ -65,30 +63,44 @@ export class ExtraescolaresComponent implements OnInit {
   siguiente() {
   
     if (this.form.valid || this.isEnabled == false) {
-      this.router.navigate(['inicio/control_escolar']);
+      this.clubes!= this.form.value;
+      this.navigationExtras.state=this.alumno;
+      this.sendEncuestaclubes(this.clubes)
+      this.router.navigate(['inicio/control_escolar'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.alumno==null) {
+      this.router.navigate(['inicio']);
+    }
+  }
+
   openSnackBar() {
     this._snackBar.open('Responde todas las preguntas', undefined, {
       duration: 3000,
     });
   }
 
-registrarEncuesta(id:any){
+sendEncuestaclubes(clubes:encuesta):void{
+  if (this.isEnabled == true) {
+    this.encuestaService.setEncuestaClubes(clubes)
+  }
 
 }
 
-  registrarAlumno(){
- 
-    this.encuestaService.registrarAlumno(this.datos).subscribe(
-      data =>{this.id =data;
-      this.registrarEncuesta(this.id)}
-    ); 
-  }
-  }
+terminar(){
+  this.encuestaService.registrarAlumno(this.alumno).subscribe(
+    data =>{this.id=data,this.dtTrigger;
+      this.clubes.idAlumno=this.id
+      console.log(this.id,this.clubes)
+      this.encuestaService.registrarEncuestaClubes(this.clubes).subscribe()}
+  ); 
+}
+
+
+}
   
 

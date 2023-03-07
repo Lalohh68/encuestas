@@ -1,4 +1,5 @@
 <mat-progress-bar mode="determinate" value="11.11"></mat-progress-bar>
+{{alumno |json}}
 <div id="container" class="container">
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
@@ -8,6 +9,7 @@
             ¿En el semestre actual, utilizaste el servicio del departamento de Control Escolar?
           </h2>
         </div>
+       
         <div class="row justify-content-center">
           <div class="row justify-content-evenly" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" (click)="servicioUtilizado()"/>
@@ -26,7 +28,7 @@
             </h3>
             {{ extraEscolares.horario }}
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="controlEscolar.horario">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -49,7 +51,7 @@
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="controlEscolar.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -72,7 +74,7 @@
               Atención del personal (Te atiende el personal)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="controlEscolar.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -95,7 +97,7 @@
               Amabilidad del personal (Hay un trato amable)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="controlEscolar.amabilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -111,6 +113,18 @@
               </mat-button-toggle-group>
             </div>
           </div>
+              <!-- comentarios -->
+              <div class="row justify-content-center mt-5">
+                <h3 class="text-center fw-semibold">
+                  Comentarios
+                </h3>
+                <div class="row justify-content-center">
+                  <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill" >
+                <mat-label>Deja un comentario.</mat-label>
+                <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="controlEscolar.comentarios">
+              </mat-form-field>
+                </div>
+              </div>
         </ng-template>
 
         <div class="d-grid d-md-flex justify-content-md-end mt-5">

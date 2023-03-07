@@ -1,6 +1,6 @@
 <mat-progress-bar mode="determinate" value="33.33"></mat-progress-bar>
 <div id="container" class="container">
-  
+  {{alumno |json}}
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
@@ -25,9 +25,8 @@
             <h3 class="text-center">
               ¿En cuanto al horario de atención te consideras?
             </h3>
-            {{ extraEscolares.horario }}
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="servicioSocial.horario">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -50,7 +49,7 @@
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="servicioSocial.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -73,7 +72,7 @@
               Atención del personal (Te atiende el personal)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="servicioSocial.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -96,7 +95,7 @@
               Amabilidad del personal (Hay un trato amable)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="servicioSocial.amabilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -115,13 +114,13 @@
 
           <!-- comentarios -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-semibold">
               Comentarios
             </h3>
             <div class="row justify-content-center">
-              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill">
+              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill" >
             <mat-label>Deja un comentario.</mat-label>
-            <textarea matInput placeholder=""></textarea>
+            <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="servicioSocial.comentarios">
           </mat-form-field>
             </div>
           </div>
@@ -129,11 +128,30 @@
         </ng-template>
 
         <div class="d-grid d-md-flex justify-content-md-end mt-5">
-          <button class="btn azul mx-5" type="button" (click)="siguiente()">
+          <button class="btn azul mx-5" type="button" (click)="terminar()">
             Siguiente
           </button>
         </div>
       </form>
+
     </mat-card>
+  </div>
+</div>
+
+
+<div class="modal" id="myModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">Encuestas registradas!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="inicio()"></button>
+      </div>
+      <div class="modal-body">
+        <h2>Tu numero de folio es: {{id}}</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="inicio()">Cerrar</button>
+      </div>
+    </div>
   </div>
 </div>

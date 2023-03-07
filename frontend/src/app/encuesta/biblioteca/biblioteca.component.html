@@ -1,6 +1,6 @@
 <mat-progress-bar mode="determinate" value="22.22"></mat-progress-bar>
 <div id="container" class="container">
-  
+  {{alumno |json}}
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
@@ -25,9 +25,8 @@
             <h3 class="text-center">
               ¿En cuanto al horario de atención te consideras?
             </h3>
-            {{ extraEscolares.horario }}
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="biblioteca.horario">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -50,7 +49,7 @@
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="biblioteca.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -73,7 +72,7 @@
               Atención del personal (Te atiende el personal)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="biblioteca.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -96,7 +95,7 @@
               Amabilidad del personal (Hay un trato amable)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="biblioteca.amabilidad"> 
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -113,15 +112,15 @@
             </div>
           </div>
 
-          <!-- comentarios -->
-          <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+           <!-- comentarios -->
+           <div class="row justify-content-center mt-5">
+            <h3 class="text-center fw-semibold">
               Comentarios
             </h3>
             <div class="row justify-content-center">
-              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill">
+              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill" >
             <mat-label>Deja un comentario.</mat-label>
-            <textarea matInput placeholder=""></textarea>
+            <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="biblioteca.comentarios">
           </mat-form-field>
             </div>
           </div>

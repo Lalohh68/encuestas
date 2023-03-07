@@ -1,14 +1,14 @@
-<mat-progress-bar mode="determinate" value="5.555"></mat-progress-bar>
+<mat-progress-bar mode="determinate" value="5.555"  ></mat-progress-bar>
+{{alumno |json}}
 <div id="container" class="container">
-  {{datos | json}}
   <div class="row justify-content-center">
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
         <div class="row">
-          <h2 class="text-center">
+          <h3 class="text-center ">
             ¿En el semestre actual, utilizaste servicio de Actividades
             Extraescolares (Clubes)?
-          </h2>
+          </h3>
         </div>
         <div class="row justify-content-center">
           <div class="row justify-content-evenly" role="group" aria-label="Basic radio toggle button group">
@@ -18,7 +18,7 @@
             <label class="btn btn-outline-danger col-3" for="btnradio2"> No </label>
           </div>
         </div>
-{{form.value |json}}
+        
         <!-- pregunta 1 -->
         <div *ngIf="isEnabled != true; else ServicioUtilizado"></div>
         <ng-template #ServicioUtilizado>
@@ -26,14 +26,13 @@
             <h3 class="text-center">
               ¿En cuanto al horario de atención te consideras?
             </h3>
-            {{ extraEscolares.horario }}
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" >
-                <mat-button-toggle value="No satisfecho"  class="col-4 col-md-3 col-lg-2">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="clubes.horario">
+                <mat-button-toggle value="No satisfecho"  class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
                   </div>
-                  <div class="row justify-content-center">No satisfecho</div>
+                  <div class="row justify-content-center ">No satisfecho</div>
                 </mat-button-toggle>
                 <mat-button-toggle value="Satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
@@ -47,11 +46,11 @@
 
           <!-- pregunta 2 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-bold">
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="clubes.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -70,11 +69,11 @@
 
           <!-- pregunta 3 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-semibold">
               Atención del personal (Te atiende el personal)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="clubes.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -93,11 +92,11 @@
 
           <!-- pregunta 4 -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-semibold">
               Amabilidad del personal (Hay un trato amable)
             </h3>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="clubes.amabilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -116,13 +115,13 @@
 
           <!-- comentarios -->
           <div class="row justify-content-center mt-5">
-            <h3 class="text-center">
+            <h3 class="text-center fw-semibold">
               Comentarios
             </h3>
             <div class="row justify-content-center">
-              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill">
+              <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill" >
             <mat-label>Deja un comentario.</mat-label>
-            <textarea matInput placeholder=""></textarea>
+            <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="clubes.comentarios">
           </mat-form-field>
             </div>
           </div>

@@ -1,7 +1,13 @@
 mat-toolbar{
-    background-color: #1B396A;
+    background-color: #6c1433;
     color: #ffffff;
 }
-
+h1{
+    font-family: Verdana;
+    
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
 
   

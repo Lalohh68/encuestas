@@ -21,7 +21,6 @@ interface carreras {
 export class InicioComponent implements OnInit {
   navigationExtras : NavigationExtras={
     state: {
-      insertId:null
     }
   }
   
@@ -34,7 +33,9 @@ export class InicioComponent implements OnInit {
     numControl:"",
     carrera:""
   };
-  getFolio:any
+  getFolio:any={
+    folio:""
+  }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
@@ -75,7 +76,7 @@ iniciar(){
         this.encuestaService.alumno(this.alumno)
       .subscribe(
         data => {this.getFolio=data;
-        if (this.getFolio.length === 0) {
+        if (this.getFolio == null) {
           this.navigationExtras.state=this.alumno;
           this.router.navigate(['inicio/clubes'],this.navigationExtras)
           
