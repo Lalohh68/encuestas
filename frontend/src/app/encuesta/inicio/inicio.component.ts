@@ -67,7 +67,7 @@ iniciar(){
 
 
   ngOnInit(): void {
-    this.modal = new window.bootstrap.Modal(document.getElementById('myModal'))
+    this.modal = new window.bootstrap.Modal(document.getElementById('myModalInicio'))
   }
 
 
