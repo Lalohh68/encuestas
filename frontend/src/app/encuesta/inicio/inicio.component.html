@@ -42,15 +42,25 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fw-bold">Ya realizaste las encuestas!</h1>
+            <h1 class="modal-title ">Ya realizaste las encuestas!</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h2>Tu numero de folio es: {{getFolio.id_alumno}}</h2>
+            <h1>Tu numero de folio es: {{getFolio.id_alumno}}</h1>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn " data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+      <div class="d-flex">
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+ 

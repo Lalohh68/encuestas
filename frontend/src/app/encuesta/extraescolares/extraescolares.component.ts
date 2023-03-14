@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { EncuestasService, encuesta } from "../services/encuesta.service";
 import { Subject } from 'rxjs';
 declare const $: any;
+declare var window:any;
 
 @Component({
   selector: 'app-extraescolares',
@@ -100,7 +101,13 @@ terminar(){
   ); 
 }
 
+showToast(){
+  const toastLiveExample = document.getElementById('liveToast')
 
+    const toast = new window.bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+}
 }
   
 

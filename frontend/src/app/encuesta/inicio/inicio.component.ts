@@ -68,8 +68,18 @@ iniciar(){
 
   ngOnInit(): void {
     this.modal = new window.bootstrap.Modal(document.getElementById('myModalInicio'))
-  }
 
+
+  
+
+  }
+showToast(){
+  const toastLiveExample = document.getElementById('liveToast')
+
+    const toast = new window.bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+}
 
   consultar() {
     if (this.form.valid) {

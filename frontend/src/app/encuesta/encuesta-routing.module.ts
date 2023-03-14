@@ -20,6 +20,7 @@ import { MedicoComponent } from './medico/medico.component';
 import { BecasComponent } from './becas/becas.component';
 import { AsesoriasAcademicasComponent } from './asesorias-academicas/asesorias-academicas.component';
 import { GraficasComponent } from "../encuestas/graficas/graficas.component";
+import { TablaComponent } from "../encuestas/tabla/tabla.component";
 
 export const EncuestaRoutingModule: Routes = [
     {
@@ -107,6 +108,10 @@ export const EncuestaRoutingModule: Routes = [
           {
             path:'grafica',
             component: GraficasComponent
+          },
+          {
+            path:'tabla',
+            component: TablaComponent
           }
         ]
         

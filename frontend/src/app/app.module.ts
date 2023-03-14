@@ -20,6 +20,7 @@ import {StudentsComponent} from './layouts/students/students.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
 exports:[
   MatCardModule, 
@@ -35,6 +36,10 @@ exports:[
   MatProgressBarModule
 ],
 declarations: [
+
+  ],
+imports: [
+ 
 ],
 
 })
@@ -45,6 +50,7 @@ export class MaterialModule{}
   
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
     }),

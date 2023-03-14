@@ -40,7 +40,9 @@ import {GraficasComponent} from '../encuestas/graficas/graficas.component';
 import {NgApexchartsModule} from 'ng-apexcharts'
 import * as ApexCharts from 'apexcharts';
 import { NgChartsModule } from 'ng2-charts';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatTableModule} from '@angular/material/table';
+import {TablaComponent} from '../encuestas/tabla/tabla.component';
 @NgModule({
   
   imports: [
@@ -60,7 +62,9 @@ import { NgChartsModule } from 'ng2-charts';
     MatStepperModule,
     MatProgressBarModule,
     NgApexchartsModule,
-    NgChartsModule
+    NgChartsModule,
+    FontAwesomeModule,
+    MatTableModule
   ],declarations: [
     InicioComponent,
     ExtraescolaresComponent,
@@ -80,7 +84,8 @@ import { NgChartsModule } from 'ng2-charts';
     PsicologicoComponent,
     MedicoComponent,
     AsesoriasAcademicasComponent,
-    GraficasComponent
+    GraficasComponent,
+    TablaComponent
   ]
 })
 export class EncuestaModule { }
