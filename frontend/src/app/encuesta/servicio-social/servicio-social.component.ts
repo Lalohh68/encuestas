@@ -106,7 +106,7 @@ export class ServicioSocialComponent implements OnInit {
       this.servicioSocial!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaServicioSocial(this.servicioSocial)
-      this.router.navigate(['inicio/residencias']);
+      this.router.navigate(['encuesta/residencias']);
     } else {
       this.openSnackBar();
     }
@@ -114,7 +114,7 @@ export class ServicioSocialComponent implements OnInit {
 
   ngOnInit() {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
     this.modal = new window.bootstrap.Modal(document.getElementById('myModal'))
     this.encuestaService.getEncuestaBiblioteca$.subscribe((biblioteca:encuesta) =>this.biblioteca = biblioteca)

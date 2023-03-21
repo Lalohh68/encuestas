@@ -8,6 +8,9 @@ import { InicioComponent } from './encuesta/inicio/inicio.component';
 import { StudentsComponent } from './layouts/students/students.component';
 
 export const AppRoutes: Routes = [
- 
+ {path:'admin',
+loadChildren: () => import('./admin/admin.module').then(m=>m.AdminModule)},
+{path:'encuesta',
+loadChildren: () => import('./encuesta/encuesta.module').then(m=>m.EncuestaModule)}
 ];
 

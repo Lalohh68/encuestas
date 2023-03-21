@@ -68,7 +68,7 @@ export class ControlEscolarComponent implements OnInit {
       this.controlEscolar!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaControlEscolar(this.controlEscolar)
-      this.router.navigate(['inicio/tutorias'],this.navigationExtras);
+      this.router.navigate(['encuesta/tutorias'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
@@ -76,7 +76,7 @@ export class ControlEscolarComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
     //this.encuestaService.getClubes$.subscribe((clubes:encuesta) =>this.club = clubes)
   }

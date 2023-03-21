@@ -88,7 +88,7 @@ showToast(){
         data => {this.getFolio=data;
         if (this.getFolio == null) {
           this.navigationExtras.state=this.alumno;
-          this.router.navigate(['inicio/clubes'],this.navigationExtras)
+          this.router.navigate(['encuesta/clubes'],this.navigationExtras)
           
         } else {
           this.modal.show();

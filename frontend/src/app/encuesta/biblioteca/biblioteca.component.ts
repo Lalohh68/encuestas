@@ -65,7 +65,7 @@ export class BibliotecaComponent implements OnInit {
       this.biblioteca!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaBiblioteca(this.biblioteca)
-      this.router.navigate(['inicio/centro_de_computo'],this.navigationExtras);
+      this.router.navigate(['encuesta/centro_de_computo'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
@@ -73,7 +73,7 @@ export class BibliotecaComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
   }
   openSnackBar() {

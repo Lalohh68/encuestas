@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncuestaRoutingModule } from './encuesta-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
@@ -43,6 +42,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatTableModule} from '@angular/material/table';
 import {TablaComponent} from '../encuestas/tabla/tabla.component';
+import { StudentsComponent } from '../layouts/students/students.component';
 @NgModule({
   
   imports: [
@@ -84,8 +84,8 @@ import {TablaComponent} from '../encuestas/tabla/tabla.component';
     PsicologicoComponent,
     MedicoComponent,
     AsesoriasAcademicasComponent,
-    GraficasComponent,
     TablaComponent
-  ]
+  ],
+  bootstrap: [EncuestaModule]
 })
 export class EncuestaModule { }

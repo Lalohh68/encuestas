@@ -24,16 +24,16 @@ import { TablaComponent } from "../encuestas/tabla/tabla.component";
 
 export const EncuestaRoutingModule: Routes = [
     {
-        path: '',
-        redirectTo: 'inicio',
+        path: 'encuesta',
+        redirectTo: 'encuesta/inicio',
         pathMatch: 'full',
       },
       {
-        path: 'inicio',
+        path: '',
         component: StudentsComponent,
         children:[
           {
-            path:'',
+            path:'inicio',
             component: InicioComponent
           },
           {
@@ -115,20 +115,7 @@ export const EncuestaRoutingModule: Routes = [
           }
         ]
         
-        },
-        {
-          path: '**',
-          component: StudentsComponent,
-          children:[
-            {
-              path:'',
-              component: InicioComponent
-            }]
-    
-    
-    
-    
-          }
+        }
 ];
 
 

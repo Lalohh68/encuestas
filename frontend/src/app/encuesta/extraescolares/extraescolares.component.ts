@@ -67,7 +67,7 @@ export class ExtraescolaresComponent implements OnInit {
       this.clubes!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaclubes(this.clubes)
-      this.router.navigate(['inicio/control_escolar'],this.navigationExtras);
+      this.router.navigate(['encuesta/control_escolar'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
@@ -75,7 +75,7 @@ export class ExtraescolaresComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
   }
 

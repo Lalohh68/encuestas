@@ -65,7 +65,7 @@ export class TutoriasComponent implements OnInit {
       this.tutorias!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaTutorias(this.tutorias)
-      this.router.navigate(['inicio/biblioteca'],this.navigationExtras);
+      this.router.navigate(['encuesta/biblioteca'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
@@ -73,7 +73,7 @@ export class TutoriasComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
   }
   openSnackBar() {

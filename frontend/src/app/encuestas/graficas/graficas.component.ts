@@ -26,6 +26,7 @@ export class GraficasComponent implements OnInit {
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
+    maintainAspectRatio: false,
     // We use these empty structures as placeholders for dynamic theming.
     scales: {
       x: {},
@@ -37,10 +38,7 @@ export class GraficasComponent implements OnInit {
     plugins: {
       legend: {
         display: true,
-      }, title: {
-        display: true,
-        text: 'Clubes',
-    },
+      }, 
       datalabels: {
         anchor: 'end',
         align: 'end',
@@ -61,8 +59,8 @@ export class GraficasComponent implements OnInit {
   public barChartData: ChartData<'bar'> = {
     labels: [ 'Horario', 'Disponibilidad', 'Atención', 'Amabilidad'],
     datasets: [
-      { data: [ this.noSatisfechoHorario, 40, 15, 0], label: 'No satisfecho',backgroundColor:'rgba(87, 6, 12, 0.9)' },
-      { data: [ this.satisfechoHorario, 60, 85, 100], label: 'Satisfecho',backgroundColor:'rgba(155, 141, 65, 0.9)'  },
+      { data: [ 0, 40, 15, 0], label: 'No satisfecho',backgroundColor:'rgba(87, 6, 12, 0.9)' },
+      { data: [0, 60, 85, 100], label: 'Satisfecho',backgroundColor:'rgba(155, 141, 65, 0.9)' },
 
     ],
     

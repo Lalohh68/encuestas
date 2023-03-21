@@ -65,7 +65,7 @@ export class CentroDeComputoComponent implements OnInit {
       this.centroComputo!= this.form.value;
       this.navigationExtras.state=this.alumno;
       this.sendEncuestaCentroComputo(this.centroComputo)
-      this.router.navigate(['inicio/servicio_social'],this.navigationExtras);
+      this.router.navigate(['encuesta/servicio_social'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
@@ -73,7 +73,7 @@ export class CentroDeComputoComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.alumno==null) {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['encuesta/inicio']);
     }
   }
   openSnackBar() {

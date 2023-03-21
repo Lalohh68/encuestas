@@ -37,7 +37,7 @@ async function createEncuestaAsesoriasAcademicas(idAlumno,horario,disponibilidad
 async function createEncuestaBiblioteca(idAlumno,horario,disponibilidad,atencion,amabilidad,comentarios) {
   const connection = await getConnection();
   const result = await connection.query(
-    `INSERT INTO bibilioteca (id_alumno, horario, disponibilidad_personal, atencion_personal, amabilidad_personal,comentarios) VALUES ('${idAlumno}', '${horario}', '${disponibilidad}', '${atencion}', '${amabilidad}','${comentarios}');`);
+    `INSERT INTO biblioteca (id_alumno, horario, disponibilidad_personal, atencion_personal, amabilidad_personal,comentarios) VALUES ('${idAlumno}', '${horario}', '${disponibilidad}', '${atencion}', '${amabilidad}','${comentarios}');`);
   return result;
 }
 
