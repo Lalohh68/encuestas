@@ -8,6 +8,7 @@ import { GraficasComponent } from "../encuestas/graficas/graficas.component";
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { NgChartsModule } from 'ng2-charts';
 import {MatCardModule} from '@angular/material/card';
+import { DataTablesModule } from "angular-datatables";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,
     RouterModule.forChild(AdminRoutingModule),
     NgChartsModule,
-    MatCardModule
+    MatCardModule,
+    DataTablesModule
   ],
   bootstrap: [AdminModule]
 })

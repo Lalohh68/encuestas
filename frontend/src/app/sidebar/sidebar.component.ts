@@ -3,6 +3,7 @@ import PerfectScrollbar from 'perfect-scrollbar';
 import { navbarData } from './nav-data';
 import { faHome,faWindowClose} from '@fortawesome/free-solid-svg-icons';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { INavbarData } from './helper';
 
 interface SideNavToggle{
     screenWidth:number;
@@ -49,7 +50,9 @@ export class SidebarComponent implements OnInit {
 
    collapsed=false;
    navData=navbarData;
-   screenWidth=0
+   screenWidth=0;
+   multiple:boolean=false;   
+
 
    @HostListener('window:resize',['$event'])
    onResize(event: any){
@@ -70,5 +73,15 @@ export class SidebarComponent implements OnInit {
    }
    ngOnInit():void{
 this.screenWidth=window.innerWidth;
+   }
+   handleClick(item: INavbarData):void {
+    if (!this.multiple) {
+        for(let modelItem of this.navData){
+            if (item !== modelItem && modelItem.expanded) {
+                modelItem.expanded=false;
+            }
+        }
+    }
+    item.expanded= !item.expanded
    }
 }

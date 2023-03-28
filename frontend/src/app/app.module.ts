@@ -108,12 +108,6 @@ exports:[
     
     
 ],
-declarations: [
-  
-   
-  
-    SublevelMenuComponent
-  ],
 imports: [
  
 ],
@@ -139,7 +133,7 @@ export class MaterialModule{}
   ],
   declarations: [
     AppComponent,StudentsComponent,AdminComponent,
-    SidebarComponent, BodyComponent
+    SidebarComponent, BodyComponent,SublevelMenuComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

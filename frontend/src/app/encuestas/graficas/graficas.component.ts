@@ -13,7 +13,7 @@ import { Subject } from "rxjs";
 })
 export class GraficasComponent implements OnInit {
   clubes:any=[]
-  numero=30
+  total=0
   satisfechoHorario:number=0
   noSatisfechoHorario:number=0
   satisfechoDisponibilidad:number=0
@@ -74,6 +74,7 @@ export class GraficasComponent implements OnInit {
   ngOnInit(): void {
     this.encuestaService.dataClubes().subscribe(
       data =>{this.clubes=data,this.dtTrigger,
+        this.total= ((this.clubes[0].total)),
         this.satisfechoHorario= ((this.clubes[0].horario_satisfechos / this.clubes[0].total)*100),
         this.noSatisfechoHorario= (this.clubes[0].horario_no_satisfechos / this.clubes[0].total)*100;
         this.satisfechoDisponibilidad= (this.clubes[0].disponibilidad_satisfechos / this.clubes[0].total)*100,
