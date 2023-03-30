@@ -77,11 +77,11 @@ export const navbarData: INavbarData[]=[
             label:'Psicologico' 
         },
         {
-            routeLink:'servicios/Medico',
+            routeLink:'servicios/medico',
             label:'Medico' 
         },
         {
-            routeLink:'servicios/Asesorias academicas',
+            routeLink:'servicios/asesorias_academicas',
             label:'Asesorias academicas' 
         }
     ]

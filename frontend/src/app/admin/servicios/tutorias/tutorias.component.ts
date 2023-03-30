@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-tutorias',
+  templateUrl: './tutorias.component.html',
+  styles: [
+  ]
+})
+export class TutoriasComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
