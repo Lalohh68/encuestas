@@ -51,3 +51,20 @@ mat-button-toggle-group {
 #container{
   margin-bottom: 60px;
 }
+
+mat-card{
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+}
+mat-card button{
+  background-color: #57060c;
+  color: #ffffff;
+}
+.modal-header{
+  background-color: #57060c;
+  color: #ffffff;
+}
+
+.modal-footer button{
+  background-color: #9b8d41;
+  color: #ffffff;
+}

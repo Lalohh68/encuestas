@@ -10,11 +10,7 @@ h1{
     flex: 1 1 auto;
   }
  
-  footer{
-    background-color: #57060c;
-    color: #ffffff;
-  }
-  
+ 
   #footer2{
     background-color: #9b8d41;
     text-align: center;
@@ -34,4 +30,16 @@ ul{
 }
 p{
   font-size: 14px;
+} 
+body{
+  margin: 0;
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
+footer{
+    background-color: #57060c;
+    color: #ffffff;
+  }
+  

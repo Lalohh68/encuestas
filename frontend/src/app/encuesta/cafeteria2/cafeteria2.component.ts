@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { EncuestasService, encuesta } from '../services/encuesta.service';
 
 @Component({
   selector: 'app-cafeteria2',
@@ -9,24 +11,47 @@ import { Router } from '@angular/router';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class Cafeteria2Component implements OnInit {
+  
+  id:any;
+  dtTrigger: Subject<any> = new Subject<any>();
+  navigationExtras : NavigationExtras={
+    state: {
+      numControl:null,
+      carrera:null,
+    }
+  }
+
+  cafeteria2:encuesta ={
+    idAlumno:"",
+    horario: "",
+    disponibilidad: "",
+    atencion:"",
+    amabilidad:"",
+    comentarios:""
+    }
   preguntasCompletas: boolean = false;
-  extraEscolares = {
-    horario: null,
-  };
+  
   disable: boolean = false;
   isEnabled: any;
   form;
+  alumno:any=[]
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private encuestaService: EncuestasService
   ) {
     this.form = formBuilder.group({
       horario: ['', Validators.required],
       disponibilidad: ['', Validators.required],
       atencion: ['', Validators.required],
       amabilidad: ['', Validators.required],
+      comentarios: ['']
     });
+    
+    const navigation=this.router.getCurrentNavigation();
+    this.alumno= navigation?.extras?.state;
+    
   }
 
   servicioUtilizado() {
@@ -38,16 +63,29 @@ export class Cafeteria2Component implements OnInit {
 
   siguiente() {
     if (this.form.valid || this.isEnabled == false) {
-      this.router.navigate(['inicio/cajas']);
+      this.cafeteria2!= this.form.value;
+      this.navigationExtras.state=this.alumno;
+      this.sendEncuestaCafeteria2(this.cafeteria2)
+      this.router.navigate(['encuesta/cajas'],this.navigationExtras);
     } else {
       this.openSnackBar();
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.alumno==null) {
+      this.router.navigate(['encuesta/inicio']);
+    }
+  }
   openSnackBar() {
     this._snackBar.open('Responde todas las preguntas', undefined, {
       duration: 3000,
     });
   }
+
+  sendEncuestaCafeteria2(cafeteria2:encuesta):void{
+    if (this.isEnabled == true) {
+      this.encuestaService.setEncuestaCafeteria2(cafeteria2)
+    }
+}
 }

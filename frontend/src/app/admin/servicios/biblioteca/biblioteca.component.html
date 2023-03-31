@@ -1,1 +1,24 @@
-<p>biblioteca works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-12">
+            <div class="card-header  card-header-icon">
+              <div class="card-icon">
+                <i class="fa-solid fa-book"></i>
+              </div>
+              <h1 class="fw-semibold">Biblioteca</h1>
+              <p class="fw-medium">Encuestas realizadas {{total}}</p>
+            </div>
+              <div class="card-body pb-5">
+                <div class="chart-wrapper">
+                    <canvas baseChart class="chart"
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [type]="barChartType">,
+                    [colors]="colors"
+                  </canvas>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>

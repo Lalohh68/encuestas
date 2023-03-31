@@ -37,6 +37,9 @@ import { TodosComponent } from "./servicios/todos/todos.component";
             component: ClubesGeneralComponent
           },
           {
+            path:'informe', component: ClubesGeneralComponent
+          },
+          {
             path:'servicios',
             children:[
               {
