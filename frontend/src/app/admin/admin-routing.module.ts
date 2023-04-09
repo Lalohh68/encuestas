@@ -21,6 +21,7 @@ import { PsicologicoComponent } from "./servicios/psicologico/psicologico.compon
 import { MedicoComponent } from "./servicios/medico/medico.component";
 import { AsesoriasAcademicasComponent } from "./servicios/asesorias-academicas/asesorias-academicas.component";
 import { TodosComponent } from "./servicios/todos/todos.component";
+import { InformeComponent } from './informe/informe.component';
 
   export const AdminRoutingModule: Routes = [
     {
@@ -37,7 +38,7 @@ import { TodosComponent } from "./servicios/todos/todos.component";
             component: ClubesGeneralComponent
           },
           {
-            path:'informe', component: ClubesGeneralComponent
+            path:'informe', component: InformeComponent
           },
           {
             path:'servicios',

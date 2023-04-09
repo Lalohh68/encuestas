@@ -108,6 +108,10 @@
         color: #fff;
     }
 }
+.active-sublevel{
+    color: #fff !important;
+    background: #9B8D41;
+}
 
 .menu-collapse-icon{
     font-size: 25px;
@@ -141,7 +145,7 @@
             }
 
             .sublevel-link-text{
-                margin-left: 0.8rem;
+                margin-left: 0.5rem;
             }
         }
 
