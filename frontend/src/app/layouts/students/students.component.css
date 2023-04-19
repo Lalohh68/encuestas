@@ -36,7 +36,9 @@ body{
   position: relative;
   display: grid;
   min-height: 100vh;
+  height: auto;
   grid-template-rows: auto 1fr auto;
+  background: #f4f7fa;
 }
 footer{
     background-color: #57060c;

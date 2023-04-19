@@ -123,7 +123,7 @@ export class MaterialModule{}
     BrowserAnimationsModule,
     FontAwesomeModule,
     RouterModule.forRoot(AppRoutes,{
-     
+     useHash:true
     }),
     HttpClientModule,
     MaterialModule,

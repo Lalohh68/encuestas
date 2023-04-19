@@ -43,6 +43,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatTableModule} from '@angular/material/table';
 import {TablaComponent} from '../encuestas/tabla/tabla.component';
 import { StudentsComponent } from '../layouts/students/students.component';
+import {SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   
   imports: [
@@ -64,7 +65,8 @@ import { StudentsComponent } from '../layouts/students/students.component';
     NgApexchartsModule,
     NgChartsModule,
     FontAwesomeModule,
-    MatTableModule
+    MatTableModule,
+   SweetAlert2Module
   ],declarations: [
     InicioComponent,
     ExtraescolaresComponent,

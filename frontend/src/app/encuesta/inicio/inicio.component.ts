@@ -4,6 +4,11 @@ import { NavigationExtras, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import {EncuestasService} from './../services/encuesta.service'
 import {alumno,respuestaAlumno} from '../models/encuestas.interface'
+// ES6 Modules or TypeScript
+import swal from 'sweetalert2';
+import { error } from 'jquery';
+
+
 declare const $: any;
 declare var window:any;
 
@@ -44,20 +49,20 @@ export class InicioComponent implements OnInit {
 form;
   constructor(private router: Router,private formBuilder: FormBuilder,private encuestaService: EncuestasService){
     this.form = formBuilder.group({
-      numeroDeControl: ['', Validators.required],
+      numeroDeControl: ['', [Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
      carrera: ['', Validators.required]
     });
    }
 
   
   carreras: carreras[] = [
-    {value: 'Ingeniería en Sistemas Computacionales', viewValue: 'Ingeniería en Sistemas Computacionales'},
-    {value: 'Ingeniería Industrial', viewValue: 'Ingeniería Industrial'},
-    {value: 'Ingeniería Mecatrónica', viewValue: 'Ingeniería Mecatrónica'},
-    {value: 'Ingeniería Bioquímica', viewValue: 'Ingeniería Bioquímica'},
-    {value: 'Ingeniería en Tecnologías de la información y Comunicaciones', viewValue: 'Ingeniería en Tecnologías de la información y Comunicaciones'},
-    {value: 'Ingeniería En Gestión empresarial', viewValue: 'Ingeniería En Gestión empresarial'},
-    {value: 'Ingeniería en Nanotecnología', viewValue: 'Ingeniería en Nanotecnología'}
+    {value: '1', viewValue: 'Ingeniería en Sistemas Computacionales'},
+    {value: '2', viewValue: 'Ingeniería Industrial'},
+    {value: '3', viewValue: 'Ingeniería Mecatrónica'},
+    {value: '4', viewValue: 'Ingeniería Bioquímica'},
+    {value: '5', viewValue: 'Ingeniería en Tecnologías de la información y Comunicaciones'},
+    {value: '6', viewValue: 'Ingeniería En Gestión empresarial'},
+    {value: '7', viewValue: 'Ingeniería en Nanotecnología'}
   ];
 
 iniciar(){
@@ -68,8 +73,7 @@ iniciar(){
 
   ngOnInit(): void {
     this.modal = new window.bootstrap.Modal(document.getElementById('myModalInicio'))
-
-
+    
   
 
   }
@@ -92,18 +96,20 @@ showToast(){
           
         } else {
           this.modal.show();
-        }}
+        }},
+        err =>{
+          swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo salió mal!',
+            confirmButtonColor: '#57060c'
+          })
+        }
       )
      
   }
     }
    
 
-registrarAlumno(){
- 
-  this.encuestaService.registrarAlumno(this.alumno).subscribe(
-    data =>{this.idAlumno=data,this.dtTrigger;}
-  ); 
-  localStorage.setItem("id",this.idAlumno);
-}
+
 }

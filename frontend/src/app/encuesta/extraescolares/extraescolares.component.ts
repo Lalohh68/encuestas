@@ -14,6 +14,7 @@ declare var window:any;
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class ExtraescolaresComponent implements OnInit {
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -70,13 +71,14 @@ export class ExtraescolaresComponent implements OnInit {
       this.router.navigate(['encuesta/control_escolar'],this.navigationExtras);
     } else {
       this.openSnackBar();
+      this.matError=true
     }
   }
 
   ngOnInit(): void {
-    if (this.alumno==null) {
-      this.router.navigate(['encuesta/inicio']);
-    }
+    // if (this.alumno==null) {
+    //   this.router.navigate(['encuesta/inicio']);
+    // }
   }
 
   openSnackBar() {

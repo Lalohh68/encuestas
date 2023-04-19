@@ -4,17 +4,24 @@
     <mat-card class="col-10 col-md-6 col-lg-4 mt-5 mat-elevation-z8 card">
       <form  [formGroup]="form" (ngSubmit)="iniciar()" novalidate>
       <div class="row justify-content-center">
-        <div class="d-grid gap-2 col-8 mx-auto">
-          <mat-form-field appearance="fill" class="my-4 ">
+        <div class="d-grid gap-2 col-10 mx-auto">
+          <mat-form-field appearance="fill" class="my-5 ">
         <mat-label>Numero de control</mat-label>
         <input matInput placeholder="Numero de control" formControlName="numeroDeControl" name="numeroDeControl" [(ngModel)]="alumno.numControl" maxlength="9">
         <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="!form.value.numeroDeControl">
+          Número de control obligatorio.
+        </mat-error>
+        <mat-error *ngIf="form.value.numeroDeControl">
+          Número de control incorrecto.
+        </mat-error>
+     
       </mat-form-field>
         </div>
         
       </div>
       <div class="row justify-content-center">
-        <div class="d-grid gap-2 col-8 mx-auto">
+        <div class="d-grid gap-2 col-10 mx-auto">
     <mat-form-field appearance="fill" class="mb-4">
         <mat-label>Carrera</mat-label>
         <mat-select formControlName="carrera" name="carrera" [(ngModel)]="alumno.carrera">
