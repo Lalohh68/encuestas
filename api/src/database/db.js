@@ -8,7 +8,7 @@ const connection= mysql.createConnection({
     user: config.user,
     password: config.password,
     port:3306
-});
+},{debug: true});
 
 const getConnection = ()=>{
     return connection
