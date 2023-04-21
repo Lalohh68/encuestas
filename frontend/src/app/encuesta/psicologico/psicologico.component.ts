@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class PsicologicoComponent implements OnInit {
- 
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -68,6 +68,7 @@ export class PsicologicoComponent implements OnInit {
       this.sendEncuestaPsicologico(this.psicologico)
       this.router.navigate(['encuesta/medico'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

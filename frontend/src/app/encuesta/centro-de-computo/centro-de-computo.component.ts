@@ -11,6 +11,7 @@ import { EncuestasService, encuesta } from '../services/encuesta.service';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class CentroDeComputoComponent implements OnInit {
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -20,7 +21,7 @@ export class CentroDeComputoComponent implements OnInit {
     }
   }
 
-  centroComputo:encuesta ={
+  centroDeComputo:encuesta ={
     idAlumno:"",
     horario: "",
     disponibilidad: "",
@@ -62,11 +63,12 @@ export class CentroDeComputoComponent implements OnInit {
 
   siguiente() {
     if (this.form.valid || this.isEnabled == false) {
-      this.centroComputo!= this.form.value;
+      this.centroDeComputo!= this.form.value;
       this.navigationExtras.state=this.alumno;
-      this.sendEncuestaCentroComputo(this.centroComputo)
+      this.sendEncuestaCentroComputo(this.centroDeComputo)
       this.router.navigate(['encuesta/servicio_social'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

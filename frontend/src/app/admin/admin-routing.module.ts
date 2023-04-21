@@ -22,6 +22,7 @@ import { MedicoComponent } from "./servicios/medico/medico.component";
 import { AsesoriasAcademicasComponent } from "./servicios/asesorias-academicas/asesorias-academicas.component";
 import { TodosComponent } from "./servicios/todos/todos.component";
 import { InformeComponent } from './informe/informe.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
   export const AdminRoutingModule: Routes = [
     {
@@ -35,7 +36,7 @@ import { InformeComponent } from './informe/informe.component';
         children:[
           {
             path:'dashboard',
-            component: ClubesGeneralComponent
+            component: DashboardComponent
           },
           {
             path:'informe', component: InformeComponent

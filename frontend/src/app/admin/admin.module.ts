@@ -28,6 +28,7 @@ import { MedicoComponent } from './servicios/medico/medico.component';
 import { AsesoriasAcademicasComponent } from './servicios/asesorias-academicas/asesorias-academicas.component';
 import { TodosComponent } from './servicios/todos/todos.component';
 import { InformeComponent } from './informe/informe.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { InformeComponent } from './informe/informe.component';
     MedicoComponent,
     AsesoriasAcademicasComponent,
     TodosComponent,
-    InformeComponent
+    InformeComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

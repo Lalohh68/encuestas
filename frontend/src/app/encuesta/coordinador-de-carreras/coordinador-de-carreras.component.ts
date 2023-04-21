@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class CoordinadorDeCarrerasComponent implements OnInit {
-
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -68,6 +68,7 @@ export class CoordinadorDeCarrerasComponent implements OnInit {
       this.sendEncuestaCoordinadorDeCarreras(this.coordinadorDeCarreras)
       this.router.navigate(['encuesta/becas'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

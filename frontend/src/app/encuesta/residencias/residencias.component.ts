@@ -11,7 +11,7 @@ import { EncuestasService, encuesta } from '../services/encuesta.service';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class ResidenciasComponent implements OnInit {
-  
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -68,6 +68,7 @@ export class ResidenciasComponent implements OnInit {
       this.sendEncuestaResidencias(this.residencias)
       this.router.navigate(['encuesta/idiomas'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

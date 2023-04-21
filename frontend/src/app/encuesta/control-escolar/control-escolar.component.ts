@@ -12,6 +12,7 @@ declare const $: any;
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class ControlEscolarComponent implements OnInit {
+  matError=false;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
     state: {
@@ -70,6 +71,7 @@ export class ControlEscolarComponent implements OnInit {
       this.sendEncuestaControlEscolar(this.controlEscolar)
       this.router.navigate(['encuesta/tutorias'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

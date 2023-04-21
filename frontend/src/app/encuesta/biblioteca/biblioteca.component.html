@@ -24,6 +24,7 @@
             <h3 class="text-center fw-bold">
               ¿En cuanto al horario de atención te consideras?
             </h3>
+            <mat-error *ngIf="!biblioteca.horario && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="biblioteca.horario">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
@@ -47,6 +48,7 @@
             <h3 class="text-center fw-bold">
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
+            <mat-error *ngIf="!biblioteca.disponibilidad && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="biblioteca.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
@@ -70,6 +72,7 @@
             <h3 class="text-center fw-bold">
               Atención del personal (Te atiende el personal)
             </h3>
+            <mat-error *ngIf="!biblioteca.atencion && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="biblioteca.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
@@ -93,6 +96,7 @@
             <h3 class="text-center fw-bold">
               Amabilidad del personal (Hay un trato amable)
             </h3>
+            <mat-error *ngIf="!biblioteca.amabilidad && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="biblioteca.amabilidad"> 
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >

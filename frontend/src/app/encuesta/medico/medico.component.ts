@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class MedicoComponent implements OnInit {
- 
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -68,6 +68,7 @@ export class MedicoComponent implements OnInit {
       this.sendEncuestaMedico(this.medico)
       this.router.navigate(['encuesta/asesorias_academicas'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

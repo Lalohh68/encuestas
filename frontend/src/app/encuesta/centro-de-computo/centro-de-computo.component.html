@@ -24,8 +24,9 @@
             <h3 class="text-center fw-bold">
               ¿En cuanto al horario de atención te consideras?
             </h3>
+            <mat-error *ngIf="!centroDeComputo.horario && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="centroComputo.horario">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="centroDeComputo.horario">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -47,8 +48,9 @@
             <h3 class="text-center fw-bold">
               Disponibilidad del personal (Existe personal en el Área)
             </h3>
+            <mat-error *ngIf="!centroDeComputo.disponibilidad && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="centroComputo.disponibilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="centroDeComputo.disponibilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -70,8 +72,9 @@
             <h3 class="text-center fw-bold">
               Atención del personal (Te atiende el personal)
             </h3>
+            <mat-error *ngIf="!centroDeComputo.atencion && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="centroComputo.atencion">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="centroDeComputo.atencion">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -93,8 +96,9 @@
             <h3 class="text-center fw-bold">
               Amabilidad del personal (Hay un trato amable)
             </h3>
+            <mat-error *ngIf="!centroDeComputo.amabilidad&& matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
             <div class="row justify-content-center">
-              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="centroComputo.amabilidad">
+              <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="centroDeComputo.amabilidad">
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -119,7 +123,7 @@
             <div class="row justify-content-center">
               <mat-form-field class="example-full-width col-lg-8 col-10"  appearance="fill" >
             <mat-label>Deja un comentario.</mat-label>
-            <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="centroComputo.comentarios">
+            <input  matInput placeholder="" formControlName="comentarios" name="comentarios" [(ngModel)]="centroDeComputo.comentarios">
           </mat-form-field>
             </div>
           </div>

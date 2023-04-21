@@ -8,6 +8,7 @@
             ¿En el semestre actual, utilizaste servicio de Actividades
             Extraescolares (Clubes)?
           </h3>
+          <mat-error *ngIf="!isEnabled && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
         </div>
         <div class="row justify-content-center">
           <div class="row justify-content-evenly" role="group" aria-label="Basic radio toggle button group">
@@ -27,7 +28,7 @@
             </h3>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="horario" name="horario" [(ngModel)]="clubes.horario">
-                <mat-error *ngIf="!clubes.horario && matError==true" class="text-center" ><h5> ¡Selecciona una opción!</h5></mat-error>
+                <mat-error *ngIf="!clubes.horario && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
                 <mat-button-toggle value="No satisfecho"  class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -51,7 +52,7 @@
             </h3>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="disponibilidad" name="disponibilidad" [(ngModel)]="clubes.disponibilidad">
-                <mat-error *ngIf="!clubes.disponibilidad && matError==true" class="text-center" ><h5> ¡Selecciona una opción!</h5></mat-error>
+                <mat-error *ngIf="!clubes.disponibilidad && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -75,7 +76,7 @@
             </h3>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="atencion" name="atencion" [(ngModel)]="clubes.atencion">
-                <mat-error *ngIf="!clubes.atencion && matError==true" class="text-center" ><h5> ¡Selecciona una opción!</h5></mat-error>
+                <mat-error *ngIf="!clubes.atencion && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2">
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -99,7 +100,7 @@
             </h3>
             <div class="row justify-content-center">
               <mat-button-toggle-group class="row justify-content-evenly" formControlName="amabilidad" name="amabilidad" [(ngModel)]="clubes.amabilidad">
-                <mat-error *ngIf="!clubes.amabilidad&& matError==true" class="text-center" ><h5> ¡Selecciona una opción!</h5></mat-error>
+                <mat-error *ngIf="!clubes.amabilidad&& matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
                 <mat-button-toggle value="No satisfecho" class="col-4 col-md-3 col-lg-2" >
                   <div class="row justify-content-center">
                     <img src="../../../assets/no_satisfecho.svg" class="icono" alt=""/>
@@ -140,12 +141,3 @@
     </mat-card>
   </div>
 </div>
-
-<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast" tabindex="-1">
-      <div class="d-flex">
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-    </div>

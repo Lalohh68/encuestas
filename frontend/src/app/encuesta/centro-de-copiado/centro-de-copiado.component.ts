@@ -11,7 +11,7 @@ import { EncuestasService, encuesta } from '../services/encuesta.service';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class CentroDeCopiadoComponent implements OnInit {
- 
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -68,6 +68,7 @@ export class CentroDeCopiadoComponent implements OnInit {
       this.sendEncuestaCentroDeCopiado(this.centroDeCopiado)
       this.router.navigate(['encuesta/psicologico'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

@@ -13,6 +13,7 @@ declare var window: any;
   styleUrls: ['../estilos-servicios.component.css'],
 })
 export class AsesoriasAcademicasComponent implements OnInit {
+  matError=false;
   id: any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras: NavigationExtras = {
@@ -195,6 +196,7 @@ export class AsesoriasAcademicasComponent implements OnInit {
       this.asesoriasAcademicas != this.form.value;
       this.terminar()
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

@@ -11,6 +11,7 @@ declare var window:any;
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class ServicioSocialComponent implements OnInit {
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -67,6 +68,7 @@ export class ServicioSocialComponent implements OnInit {
       this.sendEncuestaServicioSocial(this.servicioSocial)
       this.router.navigate(['encuesta/residencias'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

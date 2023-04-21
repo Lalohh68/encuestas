@@ -11,6 +11,7 @@ import { EncuestasService, encuesta } from '../services/encuesta.service';
   styleUrls: ['../estilos-servicios.component.css']
 })
 export class BibliotecaComponent implements OnInit {
+  matError=false;
   id:any;
   dtTrigger: Subject<any> = new Subject<any>();
   navigationExtras : NavigationExtras={
@@ -67,6 +68,7 @@ export class BibliotecaComponent implements OnInit {
       this.sendEncuestaBiblioteca(this.biblioteca)
       this.router.navigate(['encuesta/centro_de_computo'],this.navigationExtras);
     } else {
+      this.matError=true;
       this.openSnackBar();
     }
   }

@@ -5,6 +5,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EncuestasService, encuesta } from "../services/encuesta.service";
 import { Subject } from 'rxjs';
+import swal from 'sweetalert2';
 declare const $: any;
 declare var window:any;
 
@@ -70,7 +71,7 @@ export class ExtraescolaresComponent implements OnInit {
       this.sendEncuestaclubes(this.clubes)
       this.router.navigate(['encuesta/control_escolar'],this.navigationExtras);
     } else {
-      this.openSnackBar();
+      this.showMessage()
       this.matError=true
     }
   }
@@ -103,13 +104,18 @@ terminar(){
   ); 
 }
 
-showToast(){
-  const toastLiveExample = document.getElementById('liveToast')
-
-    const toast = new window.bootstrap.Toast(toastLiveExample)
-
-    toast.show()
+showMessage(){
+  swal.fire({
+  title: 'Responde todas las preguntas',
+  timer: 2000,
+  background:'#ff0000',
+  color:'#fff',
+  showConfirmButton:false,
+  timerProgressBar: true
+})
 }
+
+
 }
   
 
