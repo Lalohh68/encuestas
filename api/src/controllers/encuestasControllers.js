@@ -16,7 +16,7 @@ if (numControl != null && carrera != null && numControl != "" && carrera != "") 
   res.send(folio[0])
 }
   } catch (error) {
-    
+    console.log(error)
   }
  
 }

@@ -3,13 +3,13 @@ import { getConnection } from "./../database/db";
 async function consultarFolio(numControl) {
   const connection = await getConnection();
   const result = await connection.query(
-    "SELECT id_alumno FROM encuesta_servicios.alumnos where num_control=?",numControl); //and folio IS NOT NULL
+    "SELECT id_alumno FROM alumnos where num_control=?",numControl); //and folio IS NOT NULL
     return await result
 }
 async function consultarId(numControl) {
   const connection = await getConnection();
   const result = await connection.query(
-    "SELECT id_alumno FROM encuesta_servicios.alumnos where num_control=? ",numControl);
+    "SELECT id_alumno FROM alumnos where num_control=? ",numControl);
     return await result
 }
 

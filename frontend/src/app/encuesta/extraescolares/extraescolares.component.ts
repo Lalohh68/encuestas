@@ -107,11 +107,11 @@ terminar(){
 showMessage(){
   swal.fire({
   title: 'Responde todas las preguntas',
-  timer: 2000,
-  background:'#ff0000',
+  timer: 1500,
+  background:'#ffce30',
   color:'#fff',
+  backdrop:false,
   showConfirmButton:false,
-  timerProgressBar: true
 })
 }
 

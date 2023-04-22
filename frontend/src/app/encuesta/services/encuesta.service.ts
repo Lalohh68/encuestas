@@ -176,7 +176,7 @@ private encuestaTutorias$ = new BehaviorSubject<encuesta>(tutorias)
   constructor(private http: HttpClient) {
 
   }
-  API_URI = 'http://localhost:3000/api/encuestas/';
+  API_URI = 'http://18.222.161.115:3000/api/encuestas/';
 
   alumno(alumno: alumno): Observable<respuestaAlumno> {
     return this.http.put(`${this.API_URI}folio`, alumno);
