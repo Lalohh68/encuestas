@@ -3,12 +3,12 @@ import config from "./../config";
 
 
 const connection= mysql.createConnection({
-    host: config.host,
-    database: config.database,
-    user: config.user,
-    password: config.password,
+    host: 'ls-7efa507eec27c8750dc12bbf2df9bc8dde15e61c.cbdfpdh72gle.us-east-2.rds.amazonaws.com',
+    database: 'caitecmx_encuesta',
+    user: 'dbmasteruser',
+    password: 'lalohh68',
     port:3306
-},{debug: true});
+});
 
 const getConnection = ()=>{
     return connection
