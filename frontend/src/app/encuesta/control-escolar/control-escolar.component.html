@@ -4,9 +4,10 @@
     <mat-card class="col-10 mt-5 mat-elevation-z8">
       <form [formGroup]="form" (ngSubmit)="siguiente()" novalidate>
         <div class="row">
-          <h3 class="text-center fw-bold">
+          <h3 class="text-center fw-bold mb-4">
             ¿En el semestre actual, utilizaste el servicio del departamento de Control Escolar?
           </h3>
+          <mat-error *ngIf="!isEnabled && matError==true" class="text-center" ><p> ¡Selecciona una opción!</p></mat-error>
         </div>
        
         <div class="row justify-content-center">

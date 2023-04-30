@@ -370,6 +370,6 @@ setEncuestaTutorias(tutorias: encuesta):void{
 }
 
 dataClubes() {
-  return this.http.get(`http://localhost:3000/api/admin/clubes`);
+  return this.http.get(`${this.API_URI}clubes`);
 }
 }

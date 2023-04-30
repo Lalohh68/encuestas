@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationExtras, Router } from '@angular/router';
 import { EncuestasService, encuesta } from '../services/encuesta.service';
 import { Subject } from 'rxjs';
+import swal from 'sweetalert2';
+declare const $: any;
 
 @Component({
   selector: 'app-cajas',
@@ -69,7 +71,7 @@ export class CajasComponent implements OnInit {
       this.router.navigate(['encuesta/jefes_de_division'],this.navigationExtras);
     } else {
       this.matError=true;
-      this.openSnackBar();
+      this.showMessage();
     }
   }
 
@@ -88,5 +90,15 @@ export class CajasComponent implements OnInit {
     if (this.isEnabled == true) {
       this.encuestaService.setEncuestaCajas(cajas)
     }
+}
+showMessage(){
+  swal.fire({
+  title: 'Responde todas las preguntas',
+  timer: 1500,
+  background:'#ffce30',
+  color:'#fff',
+  backdrop:false,
+  showConfirmButton:false,
+})
 }
 }

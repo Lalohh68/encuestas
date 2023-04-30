@@ -91,7 +91,7 @@ export const navbarData: INavbarData[]=[
     icon:'fa fa-school',
     label:'Carreras',
     items:[{
-        routeLink:'carreras/sistemas_computacionales',
+        routeLink:'carreras/sistemas',
     label:'Sistemas Computacionales'
     },
     {
@@ -111,11 +111,11 @@ export const navbarData: INavbarData[]=[
         label:'Tic`s' 
     },
     {
-        routeLink:'carreras/gestion_empresarial',
+        routeLink:'carreras/gestion',
         label:'Gestión Empresarial' 
     },
     {
-        routeLink:'carreras/nanotecnologia',
+        routeLink:'carreras/nano',
         label:'Nanotecnología' 
     }
 ]   

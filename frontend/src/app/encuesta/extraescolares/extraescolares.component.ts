@@ -77,9 +77,9 @@ export class ExtraescolaresComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.alumno==null) {
-    //   this.router.navigate(['encuesta/inicio']);
-    // }
+     if (this.alumno==null) {
+      this.router.navigate(['encuesta/inicio']);
+    }
   }
 
   openSnackBar() {

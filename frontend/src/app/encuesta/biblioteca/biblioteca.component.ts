@@ -4,6 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationExtras, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { EncuestasService, encuesta } from '../services/encuesta.service';
+import swal from 'sweetalert2';
+declare const $: any;
+declare var window:any;
 
 @Component({
   selector: 'app-biblioteca',
@@ -69,7 +72,7 @@ export class BibliotecaComponent implements OnInit {
       this.router.navigate(['encuesta/centro_de_computo'],this.navigationExtras);
     } else {
       this.matError=true;
-      this.openSnackBar();
+      this.showMessage();
     }
   }
 
@@ -89,5 +92,15 @@ export class BibliotecaComponent implements OnInit {
       this.encuestaService.setEncuestaBiblioteca(biblioteca)
     }
   
+  }
+  showMessage(){
+    swal.fire({
+    title: 'Responde todas las preguntas',
+    timer: 1500,
+    background:'#ffce30',
+    color:'#fff',
+    backdrop:false,
+    showConfirmButton:false,
+  })
   }
 }

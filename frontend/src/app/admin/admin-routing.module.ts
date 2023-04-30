@@ -23,6 +23,13 @@ import { AsesoriasAcademicasComponent } from "./servicios/asesorias-academicas/a
 import { TodosComponent } from "./servicios/todos/todos.component";
 import { InformeComponent } from './informe/informe.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SistemasComponent } from './carreras/sistemas/sistemas.component';
+import { IndustrialComponent } from './carreras/industrial/industrial.component';
+import { MecatronicaComponent } from './carreras/mecatronica/mecatronica.component';
+import { BioquimicaComponent } from './carreras/bioquimica/bioquimica.component';
+import { TicsComponent } from './carreras/tics/tics.component';
+import { GestionComponent } from './carreras/gestion/gestion.component';
+import { NanoComponent } from './carreras/nano/nano.component';
 
   export const AdminRoutingModule: Routes = [
     {
@@ -118,6 +125,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
               }
             ]
           },
+          {
+            path: 'carreras',
+            children:[
+              {path:'sistemas',
+                component: SistemasComponent},
+                {path:'industrial',
+                component: IndustrialComponent},
+                {path:'mecatronica',
+                component: MecatronicaComponent},
+                {path:'bioquimica',
+                component: BioquimicaComponent},
+                {path:'tics',
+                component: TicsComponent},
+                {path:'gestion',
+                component: GestionComponent},
+                {path:'nano',
+                component: NanoComponent}
+            ]}
           
         ]
         

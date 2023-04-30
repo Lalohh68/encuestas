@@ -76,6 +76,8 @@ this.screenWidth=window.innerWidth;
    }
    handleClick(item: INavbarData):void {
     if (!this.multiple) {
+        this.collapsed=true
+        this.onToggleSideNav.emit({collapsed:this.collapsed,screenWidth:this.screenWidth})
         for(let modelItem of this.navData){
             if (item !== modelItem && modelItem.expanded) {
                 modelItem.expanded=false;

@@ -113,9 +113,14 @@ export const EncuestaRoutingModule: Routes = [
             path:'tabla',
             component: TablaComponent
           }
+
         ]
-        
-        }
+
+         }
+      //,{
+      //   path: '**',
+      //   redirectTo: 'inicio'
+      // }
 ];
 
 

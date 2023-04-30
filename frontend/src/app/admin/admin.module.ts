@@ -29,6 +29,13 @@ import { AsesoriasAcademicasComponent } from './servicios/asesorias-academicas/a
 import { TodosComponent } from './servicios/todos/todos.component';
 import { InformeComponent } from './informe/informe.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SistemasComponent } from './carreras/sistemas/sistemas.component';
+import { IndustrialComponent } from './carreras/industrial/industrial.component';
+import { MecatronicaComponent } from './carreras/mecatronica/mecatronica.component';
+import { BioquimicaComponent } from './carreras/bioquimica/bioquimica.component';
+import { TicsComponent } from './carreras/tics/tics.component';
+import { GestionComponent } from './carreras/gestion/gestion.component';
+import { NanoComponent } from './carreras/nano/nano.component';
 
 
 @NgModule({
@@ -54,7 +61,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AsesoriasAcademicasComponent,
     TodosComponent,
     InformeComponent,
-    DashboardComponent
+    DashboardComponent,
+    SistemasComponent,
+    IndustrialComponent,
+    MecatronicaComponent,
+    BioquimicaComponent,
+    TicsComponent,
+    GestionComponent,
+    NanoComponent,
   ],
   imports: [
     CommonModule,

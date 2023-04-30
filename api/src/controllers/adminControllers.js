@@ -73,7 +73,20 @@ const consultarDatosClubes = async (req, res) => {
     const consultarDatosAsesoriasAcademicas = await services.consultarDatosAsesoriasAcademicas();
     res.status(200).send(consultarDatosAsesoriasAcademicas)
   }
-
+  window.onload = function ejemplo2(){
+    setTimeout('ejemplo()',hora() )
+  }
+  function hora() {
+    horaActual= new Date();
+    horaProgramada = new Date();
+    horaProgramada.setHours(1);
+    horaProgramada.setMinutes(21);
+horaProgramada.setSeconds(0);
+return horaProgramada.getTime() - horaActua.getTime();
+  }
+function ejemplo(){
+  console.log("alaaaa")
+}
   export const methods = {
     consultarDatosClubes,
     consultarDatosControlEscolar,

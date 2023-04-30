@@ -49,7 +49,7 @@ export class InicioComponent implements OnInit {
 form;
   constructor(private router: Router,private formBuilder: FormBuilder,private encuestaService: EncuestasService){
     this.form = formBuilder.group({
-      numeroDeControl: ['', [Validators.required,Validators.minLength(9),Validators.maxLength(9)]],
+      numeroDeControl: ['', [Validators.required,Validators.minLength(9),Validators.maxLength(9),Validators.pattern("[A-Z]{1}[0-9]{8}")]],
      carrera: ['', Validators.required]
     });
    }

@@ -58,8 +58,8 @@ export class ControlEscolarComponent implements OnInit {
   public barChartData: ChartData<'bar'> = {
     labels: [ 'Horario', 'Disponibilidad', 'Atención', 'Amabilidad'],
     datasets: [
-      { data: [ 0, 40, 15, 0], label: 'No satisfecho',backgroundColor:'rgba(87, 6, 12, 0.9)' },
-      { data: [0, 60, 85, 100], label: 'Satisfecho',backgroundColor:'rgba(155, 141, 65, 0.9)' },
+      { data: [ ], label: 'No satisfecho',backgroundColor:'rgba(87, 6, 12, 0.9)' },
+      { data: [ ], label: 'Satisfecho',backgroundColor:'rgba(155, 141, 65, 0.9)' },
 
     ],
     

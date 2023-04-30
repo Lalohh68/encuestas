@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationExtras, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { EncuestasService, encuesta } from '../services/encuesta.service';
+import swal from 'sweetalert2';
+declare const $: any;
 
 @Component({
   selector: 'app-residencias',
@@ -69,7 +71,7 @@ export class ResidenciasComponent implements OnInit {
       this.router.navigate(['encuesta/idiomas'],this.navigationExtras);
     } else {
       this.matError=true;
-      this.openSnackBar();
+      this.showMessage();
     }
   }
 
@@ -89,4 +91,15 @@ export class ResidenciasComponent implements OnInit {
       this.encuestaService.setEncuestaResidencias(residencias)
     }
 }
+showMessage(){
+  swal.fire({
+  title: 'Responde todas las preguntas',
+  timer: 1500,
+  background:'#ffce30',
+  color:'#fff',
+  backdrop:false,
+  showConfirmButton:false,
+})
+}
+
 }

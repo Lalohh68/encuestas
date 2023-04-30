@@ -3,10 +3,10 @@ import config from "./../config";
 
 
 const connection= mysql.createConnection({
-    host: '65.99.225.119',
+    host: 'ls-7efa507eec27c8750dc12bbf2df9bc8dde15e61c.cbdfpdh72gle.us-east-2.rds.amazonaws.com',
     database: 'caitecmx_encuesta',
-    user: 'caitecmx_encuesta',
-    password: 'acSQuqjdaJ2z',
+    user: 'dbmasteruser',
+    password: 'lalohh68',
     port:3306
 });
 

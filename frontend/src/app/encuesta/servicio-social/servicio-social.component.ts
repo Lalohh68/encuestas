@@ -4,7 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationExtras, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { EncuestasService, encuesta } from '../services/encuesta.service';
-declare var window:any;
+import swal from 'sweetalert2';
+declare const $: any;
 @Component({
   selector: 'app-servicio-social',
   templateUrl: './servicio-social.component.html',
@@ -69,7 +70,7 @@ export class ServicioSocialComponent implements OnInit {
       this.router.navigate(['encuesta/residencias'],this.navigationExtras);
     } else {
       this.matError=true;
-      this.openSnackBar();
+      this.showMessage();
     }
   }
 
@@ -88,5 +89,15 @@ export class ServicioSocialComponent implements OnInit {
     if (this.isEnabled == true) {
       this.encuestaService.setEncuestaServicioSocial(servicioSocial)
     }
+}
+showMessage(){
+  swal.fire({
+  title: 'Responde todas las preguntas',
+  timer: 1500,
+  background:'#ffce30',
+  color:'#fff',
+  backdrop:false,
+  showConfirmButton:false,
+})
 }
 }

@@ -7,10 +7,17 @@ import { ExtraescolaresComponent } from './encuesta/extraescolares/extraescolare
 import { InicioComponent } from './encuesta/inicio/inicio.component';
 import { StudentsComponent } from './layouts/students/students.component';
 
-export const AppRoutes: Routes = [
+export const AppRoutes: Routes = [{
+    path: '',
+      redirectTo: 'encuesta',
+      pathMatch: 'full'},
  {path:'admin',
 loadChildren: () => import('./admin/admin.module').then(m=>m.AdminModule)},
 {path:'encuesta',
-loadChildren: () => import('./encuesta/encuesta.module').then(m=>m.EncuestaModule)}
+loadChildren: () => import('./encuesta/encuesta.module').then(m=>m.EncuestaModule)},{
+  path: '**',
+  redirectTo: 'encuesta'
+
+}
 ];
 

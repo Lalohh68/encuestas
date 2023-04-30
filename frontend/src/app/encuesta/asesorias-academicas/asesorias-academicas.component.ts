@@ -4,8 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationExtras, Router } from '@angular/router';
 import { EncuestasService, encuesta } from '../services/encuesta.service';
 import { Subject } from 'rxjs';
-
-declare var window: any;
+import swal from 'sweetalert2';
+declare const $: any;
+declare var window:any;
 
 @Component({
   selector: 'app-asesorias-academicas',
@@ -197,7 +198,7 @@ export class AsesoriasAcademicasComponent implements OnInit {
       this.terminar()
     } else {
       this.matError=true;
-      this.openSnackBar();
+      this.showMessage()
     }
   }
 
@@ -459,5 +460,16 @@ export class AsesoriasAcademicasComponent implements OnInit {
   }
   inicio() {
     this.router.navigate(['inicio']);
+  }
+
+  showMessage(){
+    swal.fire({
+    title: 'Responde todas las preguntas',
+    timer: 1500,
+    background:'#ffce30',
+    color:'#fff',
+    backdrop:false,
+    showConfirmButton:false,
+  })
   }
 }
