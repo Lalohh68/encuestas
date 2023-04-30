@@ -11,9 +11,24 @@ import bioquimicaRoutes  from "./routes/bioqumica.routes";
 import gestionRoutes from "./routes/gestion.routes";
 import nanoRoutes from "./routes/nano.routes";
 import cors from "cors"
+import cron from "node-cron"
+import { consultarCarrera } from "./services/adminService";
 
 const port = config.port
 
+cron.schedule("0 0 * * * *", () => {
+    consultarCarrera()
+})
+
+cron.schedule("6 0 * * * *", () => {
+    consultarCarrera()
+}) 
+cron.schedule("12 0 * * * *", () => {
+    consultarCarrera()
+})
+cron.schedule("18 0 * * * *", () => {
+    consultarCarrera()
+})
 const app=express();
 app.use(cors())
 //configuraciones
