@@ -275,7 +275,6 @@ export class InformeComponent implements OnInit {
       searching:false,
       responsive:true,
       scrollX: true
-
     };  
     this.adminService.dataClubes().subscribe(
     data =>{this.clubes=data,this.dtTrigger,

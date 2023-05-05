@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as bioquimicaController } from "../controllers/bioquimica.controller"
+import { methods as bioquimicaController } from "../controllers/bioquimica.controller.js"
 
 const router=Router();
 

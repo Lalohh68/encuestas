@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as industrialController } from "../controllers/industrial.controller"
+import { methods as industrialController } from "../controllers/industrial.controller.js"
 
 const router=Router();
 

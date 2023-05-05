@@ -460,8 +460,143 @@ export class AsesoriasAcademicasComponent implements OnInit {
   }
   inicio() {
     this.router.navigate(['inicio']);
+    this.servicioSocial = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.clubes = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.biblioteca = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.centroComputo = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.controlEscolar = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.tutorias = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.residencias = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.idiomas = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.cafeteria1 = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.cafeteria2 = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.cajas = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.coordinadorDeCarreras = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.becas = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.centroDeCopiado = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.psicologico = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.medico = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: '',
+    };
+    this.asesoriasAcademicas = {
+      idAlumno: '',
+      horario: '',
+      disponibilidad: '',
+      atencion: '',
+      amabilidad: '',
+      comentarios: ''
   }
-
+  }
   showMessage(){
     swal.fire({
     title: 'Responde todas las preguntas',

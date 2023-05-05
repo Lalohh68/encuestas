@@ -1,18 +1,18 @@
 import express from "express";
 import morgan from "morgan";
-import config from "./config";
-import encuestasRoutes from "./routes/encuestasRoutes";
-import adminRoutes from "./routes/adminRoutes";
-import ticsRoutes from "./routes/tics.routes";
-import sistemasRoutes from "./routes/sistemas.routes"
-import industrialRoutes from "./routes/industrial.routes";
-import mecatronicaRoutes from "./routes/mecatronica.routes";
-import bioquimicaRoutes  from "./routes/bioqumica.routes";
-import gestionRoutes from "./routes/gestion.routes";
-import nanoRoutes from "./routes/nano.routes";
+import config from "./config.js";
+import encuestasRoutes from "./routes/encuestasRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import ticsRoutes from "./routes/tics.routes.js";
+import sistemasRoutes from "./routes/sistemas.routes.js"
+import industrialRoutes from "./routes/industrial.routes.js";
+import mecatronicaRoutes from "./routes/mecatronica.routes.js";
+import bioquimicaRoutes  from "./routes/bioqumica.routes.js";
+import gestionRoutes from "./routes/gestion.routes.js";
+import nanoRoutes from "./routes/nano.routes.js";
 import cors from "cors"
 import cron from "node-cron"
-import { consultarCarrera } from "./services/adminService";
+import { consultarCarrera } from "./services/adminService.js";
 
 const port = config.port
 

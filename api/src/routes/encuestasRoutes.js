@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as encuestasController } from "../controllers/encuestasControllers";
+import { methods as encuestasController } from "../controllers/encuestasControllers.js";
 
 const router=Router();
 

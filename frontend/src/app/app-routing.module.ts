@@ -16,8 +16,8 @@ loadChildren: () => import('./admin/admin.module').then(m=>m.AdminModule)},
 {path:'encuesta',
 loadChildren: () => import('./encuesta/encuesta.module').then(m=>m.EncuestaModule)},{
   path: '**',
-  redirectTo: 'encuesta'
-
+  redirectTo: 'encuesta/inicio',
+pathMatch:'full'
 }
 ];
 

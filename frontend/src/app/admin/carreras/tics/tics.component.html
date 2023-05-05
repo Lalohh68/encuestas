@@ -1,1 +1,453 @@
-<p>tics works!</p>
+<div class="container-fluid">
+    <h1 class="text-center fw-bold my-5">Ingeniería en Tecnologías de la información y Comunicaciones</h1>
+    <div class="row">
+      <div class="card col-12">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-volleyball"></i>
+          </div>
+          <h1 class="fw-semibold">Clubes</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalClubes }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalClubes > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="ClubesBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalClubes == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-school-circle-exclamation"></i>
+          </div>
+          <h1 class="fw-semibold">Control escolar</h1>
+          <p class="fw-medium">
+            Encuestas realizadas {{ totalServiciosEscolares }}
+          </p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalServiciosEscolares > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="ServiciosEcolaresBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalServiciosEscolares == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-person-chalkboard"></i>
+          </div>
+          <h1 class="fw-semibold">Tutorias</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalTutorias }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalTutorias > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="TutoriasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalTutorias == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <h1 class="fw-semibold">Biblioteca</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalBiblioteca }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalBiblioteca > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="BibliotecaBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalBiblioteca == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-computer"></i>
+          </div>
+          <h1 class="fw-semibold">Centro de computo</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalCentroDeComputo }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCentroDeComputo > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="CentroDeComputoBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCentroDeComputo == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h1 class="fw-semibold">Servicio social</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalServicioSocial }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalServicioSocial > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="ServicioSocialBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalServicioSocial == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <h1 class="fw-semibold">Residencias</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalResidencias }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalResidencias > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="ResidenciasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalResidencias == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-language"></i>
+          </div>
+          <h1 class="fw-semibold">Idiomas</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalIdiomas }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalIdiomas > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="IdiomasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalIdiomas == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-mug-saucer"></i>
+          </div>
+          <h1 class="fw-semibold">Cafetería 1</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalCafeteria1 }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCafeteria1 > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="Cafeteria1BarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCafeteria1 == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-mug-saucer"></i>
+          </div>
+          <h1 class="fw-semibold">Cafetería 2</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalCafeteria2 }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCafeteria2 > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="Cafeteria2BarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCafeteria2 == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-cash-register"></i>
+          </div>
+          <h1 class="fw-semibold">Caja</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalCajas }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCajas > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="CajasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCajas == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-person-chalkboard"></i>
+          </div>
+          <h1 class="fw-semibold">Coordinador de carreras</h1>
+          <p class="fw-medium">
+            Encuestas realizadas {{ totalCoordinadorDeCarreras }}
+          </p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCoordinadorDeCarreras > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="CoordinadorDeCarrerasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCoordinadorDeCarreras == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h1 class="fw-semibold">Becas</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalBecas }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalBecas > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="BecasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalBecas == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-copy"></i>
+          </div>
+          <h1 class="fw-semibold">Centro de copiado</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalCentroDeCopiado }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalCentroDeCopiado > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="CentroDeCopiadoBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalCentroDeCopiado == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-person-shelter"></i>
+          </div>
+          <h1 class="fw-semibold">Psicológico</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalPsicologico }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalPsicologico > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="PsicologicoBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalPsicologico == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <h1 class="fw-semibold">Médico</h1>
+          <p class="fw-medium">Encuestas realizadas {{ totalMedico }}</p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalMedico > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="MedicoBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalMedico == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card col-12 mt-5">
+        <div class="card-header card-header-icon">
+          <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h1 class="fw-semibold">AsesoriasAcademicas</h1>
+          <p class="fw-medium">
+            Encuestas realizadas {{ totalAsesoriasAcademicas }}
+          </p>
+        </div>
+        <div class="card-body pb-5">
+          <div *ngIf="totalAsesoriasAcademicas > 0" class="chart-wrapper">
+            <canvas
+              baseChart
+              class="chart"
+              [data]="AsesoriasAcademicasBarChartData"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [type]="barChartType"
+              >, [colors]="colors"
+            </canvas>
+          </div>
+          <div *ngIf="totalAsesoriasAcademicas == 0" class="my-5 text-center">
+            <h2>Sin datos</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

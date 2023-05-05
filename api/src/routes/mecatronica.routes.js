@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as mecatronicaController } from "../controllers/mecatronica.controller"
+import { methods as mecatronicaController } from "../controllers/mecatronica.controller.js"
 
 const router=Router();
 

@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as ticsController } from "../controllers/ticsController"
+import { methods as ticsController } from "../controllers/ticsController.js"
 
 const router=Router();
 

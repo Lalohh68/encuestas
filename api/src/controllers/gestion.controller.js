@@ -1,5 +1,5 @@
 import { request } from "express";
-import * as services from "./../services/gestion.service";
+import * as services from "./../services/gestion.service.js";
 
 const consultarDatosClubes = async (req, res) => {
     const datosClubes = await services.consultarDatosClubes();

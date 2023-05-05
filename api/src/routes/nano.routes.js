@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as nanoController } from "../controllers/nano.controller"
+import { methods as nanoController } from "../controllers/nano.controller.js"
 
 const router=Router();
 

@@ -1,5 +1,5 @@
 import { request } from "express";
-import * as services from "./../services/encuestasServices";
+import * as services from "./../services/encuestasServices.js";
 
 
 const consultarFolio = async (req, res) => {

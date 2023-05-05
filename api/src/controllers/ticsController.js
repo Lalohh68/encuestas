@@ -1,5 +1,5 @@
 import { request } from "express";
-import * as services from "./../services/ticsService";
+import * as services from "./../services/ticsService.js";
 
 const consultarDatosClubes = async (req, res) => {
     const datosClubes = await services.consultarDatosClubes();

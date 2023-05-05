@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { methods as adminController } from "../controllers/adminControllers"
+import { methods as adminController } from "../controllers/adminControllers.js"
 
 const router=Router();
 

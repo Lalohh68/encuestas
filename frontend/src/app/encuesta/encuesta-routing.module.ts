@@ -29,7 +29,7 @@ export const EncuestaRoutingModule: Routes = [
         pathMatch: 'full',
       },
       {
-        path: '',
+        path: 'encuesta',
         component: StudentsComponent,
         children:[
           {
