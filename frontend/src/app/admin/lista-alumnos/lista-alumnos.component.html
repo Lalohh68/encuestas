@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-12">
+            <div class="card-header  card-header-icon">
+              <div class="card-icon">
+                <i class="fa-solid fa-file-invoice"></i>
+              </div>
+              <h1 class="fw-semibold">Alumnos</h1>
+            </div>
+              <div class="card-body pb-5">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="datatables" class="display cell-border" style="width:100%">
+                    <thead >
+                      <tr>
+                        <th class="text-center border column-primary text-white">Folio</th>
+                        <th class="text-center border column-primary text-white">Nombre</th>
+                        <th class="text-center border column-primary text-white">Carrera</th>
+                     
+                      </tr>
+                    </thead>
+                        <tbody>
+                          <tr *ngFor="let alumno of alumnos" style="cursor: pointer" >
+                            <td>{{alumno.folio}}</td>
+                            <td>{{alumno.num_control}}</td>
+                            <td>{{alumno.carrera}}</td>
+                            
+                        </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+    </div>

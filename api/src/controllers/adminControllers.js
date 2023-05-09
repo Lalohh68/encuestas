@@ -73,6 +73,11 @@ const consultarDatosClubes = async (req, res) => {
     const consultarDatosAsesoriasAcademicas = await services.consultarDatosAsesoriasAcademicas();
     res.status(200).send(consultarDatosAsesoriasAcademicas)
   }
+  const consultarAlumnos = async (req, res) => {
+    const consultarAlumnos = await services.consultarAlumnos();
+    res.json(consultarAlumnos)
+   
+  }
 
   export const methods = {
     consultarDatosClubes,
@@ -91,5 +96,6 @@ const consultarDatosClubes = async (req, res) => {
     consultarDatosCentroDeCopiado,
     consultarDatosPsicologico,
     consultarDatosMedico,
-    consultarDatosAsesoriasAcademicas
+    consultarDatosAsesoriasAcademicas,
+    consultarAlumnos
   }

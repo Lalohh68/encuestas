@@ -67,4 +67,7 @@ export class AdminService{
       dataAsesoriasAcademicas() {
         return this.http.get(`${this.API_URI}asesorias_academicas`);
       }
+      consultarAlumnos() {
+        return this.http.get(`${this.API_URI}alumnos`);
+      }
 }

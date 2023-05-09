@@ -111,7 +111,14 @@ async function consultarDatosClubes() {
   async function consultarCarrera() {
    
     const result = await getConnection.query(
-        `SELECT * FROM caitecmx_encuesta.carreras where id_carreras=1;`); 
+        `SELECT * FROM carreras where id_carreras=1;`); 
+    
+      return await result
+  }
+  async function consultarAlumnos() {
+   
+    const result = await getConnection.query(
+        `SELECT id_alumno as folio, num_control, carreras.carrera FROM alumnos inner join carreras where alumnos.carrera = carreras.id_carreras order by id_alumno;`); 
     
       return await result
   }
@@ -134,5 +141,6 @@ export {
     consultarDatosPsicologico,
     consultarDatosMedico,
     consultarDatosAsesoriasAcademicas,
-    consultarCarrera
+    consultarCarrera,
+    consultarAlumnos
 }

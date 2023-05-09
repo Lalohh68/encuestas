@@ -124,6 +124,11 @@ export const navbarData: INavbarData[]=[
     routeLink:'informe',
     icon:'fa fa-magnifying-glass-chart',
     label:'Informe'
+},
+{
+    routeLink:'alumnos',
+    icon:'fa fa-user',
+    label:'Alumnos'
 }
 
 ]

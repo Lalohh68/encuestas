@@ -30,6 +30,7 @@ import { BioquimicaComponent } from './carreras/bioquimica/bioquimica.component'
 import { TicsComponent } from './carreras/tics/tics.component';
 import { GestionComponent } from './carreras/gestion/gestion.component';
 import { NanoComponent } from './carreras/nano/nano.component';
+import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
   export const AdminRoutingModule: Routes = [
     {
@@ -142,7 +143,11 @@ import { NanoComponent } from './carreras/nano/nano.component';
                 component: GestionComponent},
                 {path:'nano',
                 component: NanoComponent}
-            ]}
+            ]},
+            {
+              path: 'alumnos',
+              component:ListaAlumnosComponent
+              }
           
         ]
         

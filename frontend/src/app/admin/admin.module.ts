@@ -36,6 +36,7 @@ import { BioquimicaComponent } from './carreras/bioquimica/bioquimica.component'
 import { TicsComponent } from './carreras/tics/tics.component';
 import { GestionComponent } from './carreras/gestion/gestion.component';
 import { NanoComponent } from './carreras/nano/nano.component';
+import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { NanoComponent } from './carreras/nano/nano.component';
     TicsComponent,
     GestionComponent,
     NanoComponent,
+    ListaAlumnosComponent,
   ],
   imports: [
     CommonModule,

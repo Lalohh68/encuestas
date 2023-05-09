@@ -262,20 +262,28 @@ export class InformeComponent implements OnInit {
   noSatisfechoAmabilidad:0
   }
 
-  dtOptions: DataTables.Settings = {};
   
-
+  dtOptions: any = {};
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.dtOptions = {
-      paging: false,
-      ordering: false,
-      info: false,
-      searching:false,
-      responsive:true,
-      scrollX: true
-    };  
+    // // this.dtOptions = {
+    // //   paging: false,
+    // //   ordering: false,
+    // //   info: false,
+    // //   searching:false,
+    // //   responsive:true,
+    // //   scrollX: true,
+    // //   dom: 'Bfrtip',
+    // //   buttons: [
+        
+    // //     'colvis',
+    // //     'copy',
+    // //     'print',
+    // //     'excel'
+    // //   ]
+      
+    // // };  
     this.adminService.dataClubes().subscribe(
     data =>{this.clubes=data,this.dtTrigger,
       this.dataClubes.total= ((this.clubes[0].total)),
@@ -538,6 +546,21 @@ export class InformeComponent implements OnInit {
       this.dataAsesoriasAcademicas.noSatisfechoTotal=(this.dataAsesoriasAcademicas.noSatisfechoHorario+this.dataAsesoriasAcademicas.noSatisfechoAmabilidad+this.dataAsesoriasAcademicas.noSatisfechoAtencion+this.dataAsesoriasAcademicas.noSatisfechoDisponibilidad)*.25
     },
   );
+  
+  setTimeout(()=>{   
+    $('#datatableexample').DataTable( {
+      
+    ordering: false,
+    info: false,
+    searching:false,
+    responsive:true,
+    scrollX: true,
+      paging: false,
+      pagingType: 'full_numbers',
+      processing: true,
+      dom: 'Blfrtip',
+  } );
+  }, 2000);
   }
 
 }

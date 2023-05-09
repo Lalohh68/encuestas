@@ -21,6 +21,7 @@ router
 .get("/psicologico", adminController.consultarDatosPsicologico)
 .get("/medico", adminController.consultarDatosMedico)
 .get("/asesorias_academicas", adminController.consultarDatosAsesoriasAcademicas)
+.get("/alumnos", adminController.consultarAlumnos)
 
 
 export default router
