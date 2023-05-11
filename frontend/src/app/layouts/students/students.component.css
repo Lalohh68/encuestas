@@ -2,6 +2,9 @@ mat-toolbar{
     background-color: #57060c;
     color: #ffffff;
 }
+.navbar{
+  background-color: #ffffff;
+}
 h1{
   font-weight: 800;
   font-family: Arial, Helvetica, sans-serif;
