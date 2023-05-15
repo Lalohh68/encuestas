@@ -70,4 +70,7 @@ export class AdminService{
       consultarAlumnos() {
         return this.http.get(`${this.API_URI}alumnos`);
       }
+      consultarTotalAlumnos() {
+        return this.http.get(`${this.API_URI}total`);
+      }
 }

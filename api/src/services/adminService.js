@@ -142,6 +142,15 @@ async function consultarDatosClubes() {
       return await result
   }
 
+  async function consultarTotalAlumnos() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT count(id_alumno) as total, (SELECT count(id_alumno) as total FROM alumnos where carrera = 1)as sistemas,(SELECT count(id_alumno) as total FROM alumnos where carrera = 2)as industrial,(SELECT count(id_alumno) as total FROM alumnos where carrera = 3)as mecatronica,(SELECT count(id_alumno) as total FROM alumnos where carrera = 4)as bioquimica, (SELECT count(id_alumno) as total FROM alumnos where carrera = 5)as tics, (SELECT count(id_alumno) as total FROM alumnos where carrera = 6)as gestion, (SELECT count(id_alumno) as total FROM alumnos where carrera = 7)as nano FROM alumnos;`); 
+    
+      return await result
+  }
+
 export {
     consultarDatosClubes,
     consultarDatosControlEscolar,
@@ -161,5 +170,6 @@ export {
     consultarDatosMedico,
     consultarDatosAsesoriasAcademicas,
     consultarCarrera,
-    consultarAlumnos
+    consultarAlumnos,
+    consultarTotalAlumnos
 }

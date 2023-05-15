@@ -165,8 +165,7 @@
     
           .card-icon,
           .card-text{
-            border-radius: 5px;
-            background-color: #9B8D41;
+            border-radius: 5px;;
             color: #fff;
             padding: 15px;
             margin-top: -35px;
@@ -333,4 +332,8 @@
       .card .card-header a[aria-expanded="true"]{
         color: #e91e63;
       }
+    }
+
+    .rosa{
+      background-color:  #e91e63;
     }

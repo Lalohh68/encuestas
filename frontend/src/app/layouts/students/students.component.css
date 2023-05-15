@@ -47,4 +47,34 @@ footer{
     background-color: #57060c;
     color: #ffffff;
   }
-  
+  @media (min-width: 200px) { 
+    .logos{
+      height: 35px;
+    }
+   }
+
+
+@media (min-width: 768px) { 
+  .logos{
+    height: 40px;
+  }
+ }
+
+
+@media (min-width: 992px) { 
+  .logos{
+    height: 45px;
+  }
+ }
+
+
+@media (min-width: 1200px) { 
+   .logos{
+  height: 50px;
+} }
+
+@media (min-width: 1400px) { 
+  .logos{
+    height: 55px;
+  }
+ }

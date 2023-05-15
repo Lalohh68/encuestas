@@ -455,8 +455,18 @@ export class AsesoriasAcademicasComponent implements OnInit {
             .subscribe();
         }
         this.modal.show();
+      },
+      err =>{
+        swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Algo salió mal!',
+          confirmButtonColor: '#57060c'
+        })
       });
-    } catch (error) {}
+    } catch (error) {
+
+    }
   }
   inicio() {
     this.router.navigate(['inicio']);

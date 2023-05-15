@@ -78,6 +78,11 @@ const consultarDatosClubes = async (req, res) => {
     res.json(consultarAlumnos)
    
   }
+  const consultarTotalAlumnos = async (req, res) => {
+    const consultarTotalAlumnos = await services.consultarTotalAlumnos();
+    res.status(200).send(consultarTotalAlumnos)
+   
+  }
 
   export const methods = {
     consultarDatosClubes,
@@ -97,5 +102,6 @@ const consultarDatosClubes = async (req, res) => {
     consultarDatosPsicologico,
     consultarDatosMedico,
     consultarDatosAsesoriasAcademicas,
-    consultarAlumnos
+    consultarAlumnos,
+    consultarTotalAlumnos
   }

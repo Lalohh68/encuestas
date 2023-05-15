@@ -33,6 +33,7 @@ import { NanoComponent } from './carreras/nano/nano.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
   export const AdminRoutingModule: Routes = [
+
     {
       path: 'admin',
       redirectTo: 'admin/dashboard',
