@@ -26,38 +26,39 @@ export class ListaAlumnosComponent implements AfterViewInit, OnDestroy, OnInit  
   alumnos:any=[]
   
   ngOnInit():void {
- 
-      this.adminService.consultarAlumnos().subscribe(
-          data =>{this.alumnos=data,this.dtTrigger.next(void 0)}
-      );
-  
-      setTimeout(()=>{   
-        $('#datatables').DataTable( {
-          language: {
-            url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
-        },
-        ordering: true,
-        info: true,
-        searching:true,
-        responsive:true,
-        scrollX: true,
-          paging: true,
-          pagingType: 'full_numbers',
-          processing: true,
-          dom: 'lBfrtip',
-          buttons: [
-            {extend: 'excel',
-              text: '',
-              
-              className:'mx-3 fa-solid fa-file-excel text-white bg-success',
-              exportOptions: {
-                columns: ':visible'}}
-              
-              
-            ]
-      } );
-      }, 500); 
-  
+    this.dtOptions = {
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+    },
+    ordering: true,
+    info: true,
+    searching:true,
+    responsive:true,
+    scrollX: true,
+      paging: true,
+      pagingType: 'full_numbers',
+      processing: true,
+      dom: 'lBfrtip',
+      buttons: [
+        {extend: 'excel',
+          text: '',
+          
+          className:'mx-3 fa-solid fa-file-excel text-white bg-success',
+          exportOptions: {
+            columns: ':visible'}}
+          
+          
+        
+      ],
+    };
+    this.getAlumnos();
+  }
+
+  getAlumnos(){
+    this.adminService.consultarAlumnos().subscribe(
+      data =>{this.alumnos=data;
+      this.rerender()}
+  );
   }
 
   ngAfterViewInit(): void {

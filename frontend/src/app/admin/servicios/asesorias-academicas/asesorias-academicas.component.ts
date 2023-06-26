@@ -20,6 +20,8 @@ export class AsesoriasAcademicasComponent implements OnInit {
   noSatisfechoAtencion:number=0
   satisfechoAmabilidad:number=0
   noSatisfechoAmabilidad:number=0
+  comentarios:any=[]
+  dtOptions: any = {};
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
   public barChartOptions: ChartConfiguration['options'] = {
@@ -70,6 +72,9 @@ export class AsesoriasAcademicasComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject<any>();
   constructor(private adminService: AdminService, ){}
   ngOnInit(): void {
+   
+
+
     this.adminService.dataAsesoriasAcademicas().subscribe(
       data =>{this.asesoriasAcademicas=data,this.dtTrigger,
         this.total= ((this.asesoriasAcademicas[0].total)),
@@ -94,6 +99,7 @@ export class AsesoriasAcademicasComponent implements OnInit {
     
       }
     );
+
    
   }
   

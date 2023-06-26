@@ -31,10 +31,27 @@ import { TicsComponent } from './carreras/tics/tics.component';
 import { GestionComponent } from './carreras/gestion/gestion.component';
 import { NanoComponent } from './carreras/nano/nano.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
+import { AsesoriasComponent } from './comentarios/asesorias/asesorias.component';
+import { ClubesComentariosComponent } from './comentarios/clubes-comentarios/clubes-comentarios.component';
+import { ControlEscolarComentariosComponent } from './comentarios/control-escolar-comentarios/control-escolar-comentarios.component';
+import { TutoriasComentariosComponent } from './comentarios/tutorias-comentarios/tutorias-comentarios.component';
+import { BibliotecaComentariosComponent } from './comentarios/biblioteca-comentarios/biblioteca-comentarios.component';
+import { CentroComputoComentariosComponent } from './comentarios/centro-computo-comentarios/centro-computo-comentarios.component';
+import { ServicioSocialComentariosComponent } from './comentarios/servicio-social-comentarios/servicio-social-comentarios.component';
+import { ResidenciasComentariosComponent } from './comentarios/residencias-comentarios/residencias-comentarios.component';
+import { IdiomasComentariosComponent } from './comentarios/idiomas-comentarios/idiomas-comentarios.component';
+import { Cafeteria1ComentariosComponent } from './comentarios/cafeteria1-comentarios/cafeteria1-comentarios.component';
+import { Cafeteria2ComentariosComponent } from './comentarios/cafeteria2-comentarios/cafeteria2-comentarios.component';
+import { CajasComentariosComponent } from './comentarios/cajas-comentarios/cajas-comentarios.component';
+import { CoordinadorComentariosComponent } from './comentarios/coordinador-comentarios/coordinador-comentarios.component';
+import { BecasComentariosComponent } from './comentarios/becas-comentarios/becas-comentarios.component';
+import { CentroCopiadoComentariosComponent } from './comentarios/centro-copiado-comentarios/centro-copiado-comentarios.component';
+import { PsicologicoComentariosComponent } from './comentarios/psicologico-comentarios/psicologico-comentarios.component';
+import { MedicoComentariosComponent } from './comentarios/medico-comentarios/medico-comentarios.component';
 
   export const AdminRoutingModule: Routes = [
-
-    {
+  
+{
       path: 'admin',
       redirectTo: 'admin/dashboard',
       pathMatch: 'full',
@@ -59,71 +76,71 @@ import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
             },
               {
                 path:'clubes',
-                component: ClubesComponent
+                component: ClubesComentariosComponent
               },
               {
                 path:'control_escolar',
-                component: ControlEscolarComponent
+                component: ControlEscolarComentariosComponent
               },
               {
                 path:'tutorias',
-                component: TutoriasComponent
+                component: TutoriasComentariosComponent
               },
               {
                 path:'biblioteca',
-                component: BibliotecaComponent
+                component: BibliotecaComentariosComponent
               },
               {
                 path:'centro_de_computo',
-                component: CentroDeComputoComponent
+                component: CentroComputoComentariosComponent
               },
               {
                 path:'servicio_social',
-                component: ServicioSocialComponent
+                component: ServicioSocialComentariosComponent
               },
               {
                 path:'residencias',
-                component: ResidenciasComponent
+                component: ResidenciasComentariosComponent
               },
               {
                 path:'idiomas',
-                component: IdiomasComponent
+                component: IdiomasComentariosComponent
               },
               {
                 path:'cafeteria_1',
-                component: Cafeteria1Component
+                component: Cafeteria1ComentariosComponent
               },
               {
                 path:'cafeteria_2',
-                component: Cafeteria2Component
+                component: Cafeteria2ComentariosComponent
               },
               {
                 path:'cajas',
-                component: CajasComponent
+                component: CajasComentariosComponent
               },
               {
                 path:'coordinador_de_carreras',
-                component: CoordinadorDeCarrerasComponent
+                component: CoordinadorComentariosComponent
               },
               {
                 path:'becas',
-                component: BecasComponent
+                component: BecasComentariosComponent
               },
               {
                 path:'centro_de_copiado',
-                component: CentroDeCopiadoComponent
+                component: CentroCopiadoComentariosComponent
               },
               {
                 path:'psicologico',
-                component: PsicologicoComponent
+                component: PsicologicoComentariosComponent
               },
               {
                 path:'medico',
-                component: MedicoComponent
+                component: MedicoComentariosComponent
               },
               {
                 path:'asesorias_academicas',
-                component: AsesoriasAcademicasComponent
+                component: AsesoriasComponent
               }
             ]
           },

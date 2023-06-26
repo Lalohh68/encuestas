@@ -1,13 +1,28 @@
-<div class="container-fluid">
+<div class="container-fluid"id="tablaa">
     <div class="row">
-        <div class="card col-12">
+    <!--  
+<ng-container *ngIf="imgcreada === true;">
+    <div >
+  
+        Imagen Creada 
+       <h4>Imagen Creada:</h4>
+       <img src={{imagenCreada}}>
+  
+       //Botón para descargar la imagen creada
+       <a type="button" class="btn btn-success mt-3" href="{{imagenCreada}}" download>	
+       Descargar
+       </a>
+  
+    </div>
+ </ng-container> -->
+        <div class="card col-12" >
             <div class="card-header  card-header-icon">
               <div class="card-icon">
                 <i class="fa-solid fa-file-invoice"></i>
               </div>
               <h1 class="fw-semibold">Informe</h1>
             </div>
-              <div class="card-body pb-5">
+              <div class="card-body pb-5" id="datatableexamples">
                 <table id="datatableexample" class="display cell-border" style="width:100%">
                     <thead>
                         <tr >
@@ -293,5 +308,5 @@
               </div>
           </div>
       </div>
+      
     </div>
-

@@ -37,7 +37,25 @@ import { TicsComponent } from './carreras/tics/tics.component';
 import { GestionComponent } from './carreras/gestion/gestion.component';
 import { NanoComponent } from './carreras/nano/nano.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
-
+import {MatExpansionModule} from '@angular/material/expansion'
+import {MatDividerModule} from '@angular/material/divider';
+import { AsesoriasComponent } from './comentarios/asesorias/asesorias.component';
+import { ClubesComentariosComponent } from './comentarios/clubes-comentarios/clubes-comentarios.component';
+import { ControlEscolarComentariosComponent } from './comentarios/control-escolar-comentarios/control-escolar-comentarios.component';
+import { TutoriasComentariosComponent } from './comentarios/tutorias-comentarios/tutorias-comentarios.component';
+import { BibliotecaComentariosComponent } from './comentarios/biblioteca-comentarios/biblioteca-comentarios.component';
+import { CentroComputoComentariosComponent } from './comentarios/centro-computo-comentarios/centro-computo-comentarios.component';
+import { ServicioSocialComentariosComponent } from './comentarios/servicio-social-comentarios/servicio-social-comentarios.component';
+import { ResidenciasComentariosComponent } from './comentarios/residencias-comentarios/residencias-comentarios.component';
+import { IdiomasComentariosComponent } from './comentarios/idiomas-comentarios/idiomas-comentarios.component';
+import { Cafeteria1ComentariosComponent } from './comentarios/cafeteria1-comentarios/cafeteria1-comentarios.component';
+import { Cafeteria2ComentariosComponent } from './comentarios/cafeteria2-comentarios/cafeteria2-comentarios.component';
+import { CajasComentariosComponent } from './comentarios/cajas-comentarios/cajas-comentarios.component';
+import { CoordinadorComentariosComponent } from './comentarios/coordinador-comentarios/coordinador-comentarios.component';
+import { BecasComentariosComponent } from './comentarios/becas-comentarios/becas-comentarios.component';
+import { CentroCopiadoComentariosComponent } from './comentarios/centro-copiado-comentarios/centro-copiado-comentarios.component';
+import { PsicologicoComentariosComponent } from './comentarios/psicologico-comentarios/psicologico-comentarios.component';
+import { MedicoComentariosComponent } from './comentarios/medico-comentarios/medico-comentarios.component'
 
 @NgModule({
   declarations: [
@@ -71,13 +89,32 @@ import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
     GestionComponent,
     NanoComponent,
     ListaAlumnosComponent,
+    AsesoriasComponent,
+    ClubesComentariosComponent,
+    ControlEscolarComentariosComponent,
+    TutoriasComentariosComponent,
+    BibliotecaComentariosComponent,
+    CentroComputoComentariosComponent,
+    ServicioSocialComentariosComponent,
+    ResidenciasComentariosComponent,
+    IdiomasComentariosComponent,
+    Cafeteria1ComentariosComponent,
+    Cafeteria2ComentariosComponent,
+    CajasComentariosComponent,
+    CoordinadorComentariosComponent,
+    BecasComentariosComponent,
+    CentroCopiadoComentariosComponent,
+    PsicologicoComentariosComponent,
+    MedicoComentariosComponent,
+    
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(AdminRoutingModule),
     NgChartsModule,
     MatCardModule,
-    DataTablesModule
+    DataTablesModule,MatExpansionModule,
+    MatDividerModule
   ],
   bootstrap: [AdminModule]
 })

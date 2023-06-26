@@ -73,4 +73,56 @@ export class AdminService{
       consultarTotalAlumnos() {
         return this.http.get(`${this.API_URI}total`);
       }
+      
+      comentariosClubes() {
+        return this.http.get(`${this.API_URI}clubes/comentarios`);
+      }
+      comentariosControlEscolar() {
+        return this.http.get(`${this.API_URI}control_escolar/comentarios`);
+      }
+      comentariosTutorias() {
+        return this.http.get(`${this.API_URI}tutorias/comentarios`);
+      }
+      comentariosBiblioteca() {
+        return this.http.get(`${this.API_URI}biblioteca/comentarios`);
+      }
+      comentariosCentroDeComputo() {
+        return this.http.get(`${this.API_URI}centro_de_computo/comentarios`);
+      }
+      comentariosServicioSocial() {
+        return this.http.get(`${this.API_URI}servicio_social/comentarios`);
+      }
+      comentariosResidencias() {
+        return this.http.get(`${this.API_URI}residencias/comentarios`);
+      }
+      comentariosIdiomas() {
+        return this.http.get(`${this.API_URI}idiomas/comentarios`);
+      }
+      comentariosCafeteria1() {
+        return this.http.get(`${this.API_URI}cafeteria_1/comentarios`);
+      }
+      comentariosCafeteria2() {
+        return this.http.get(`${this.API_URI}cafeteria_2/comentarios`);
+      }
+      comentariosCajas() {
+        return this.http.get(`${this.API_URI}cajas/comentarios`);
+      }
+      comentariosCoordinadorDeCarreras() {
+        return this.http.get(`${this.API_URI}coordinador_de_carreras/comentarios`);
+      }
+      comentariosBecas() {
+        return this.http.get(`${this.API_URI}becas/comentarios`);
+      }
+      comentariosCentroDeCopiado() {
+        return this.http.get(`${this.API_URI}centro_de_copiado/comentarios`);
+      }
+      comentariosPsicologico() {
+        return this.http.get(`${this.API_URI}psicologico/comentarios`);
+      }
+      comentariosMedico() {
+        return this.http.get(`${this.API_URI}medico/comentarios`);
+      }
+      comentariosAsesoriasAcademicas() {
+        return this.http.get(`${this.API_URI}asesorias_academicas/comentarios`);
+      }
 }

@@ -469,7 +469,7 @@ export class AsesoriasAcademicasComponent implements OnInit {
     }
   }
   inicio() {
-    this.router.navigate(['inicio']);
+    
     this.servicioSocial = {
       idAlumno: '',
       horario: '',
@@ -606,6 +606,7 @@ export class AsesoriasAcademicasComponent implements OnInit {
       amabilidad: '',
       comentarios: ''
   }
+  this.router.navigate(['inicio']);
   }
   showMessage(){
     swal.fire({

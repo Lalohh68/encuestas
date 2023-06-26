@@ -84,6 +84,80 @@ const consultarDatosClubes = async (req, res) => {
    
   }
 
+  // comentarios
+  const consultarComentariosClubes = async (req, res) => {
+    const datosClubes = await services.consultarComentariosClubes();
+    res.send(datosClubes)
+  }
+  const consultarComentariosControlEscolar = async (req, res) => {
+    const datosControlEscolar = await services.consultarComentariosControlEscolar();
+    res.send(datosControlEscolar)
+  }
+
+  const consultarComentariosTutorias = async (req, res) => {
+    const datosTutorias = await services.consultarComentariosTutorias();
+    res.send(datosTutorias)
+  }
+
+  const consultarComentariosBiblioteca = async (req, res) => {
+    const datosBiblioteca = await services.consultarComentariosBiblioteca();
+    res.send(datosBiblioteca)
+  }
+
+  const consultarComentariosCentroDeComputo = async (req, res) => {
+    const consultarDatosCentroDeComputo = await services.consultarComentariosCentroDeComputo();
+    res.status(200).send(consultarDatosCentroDeComputo)
+  }
+
+  const consultarComentariosServicioSocial = async (req, res) => {
+    const consultarDatosServicioSocial = await services.consultarComentariosServicioSocial();
+    res.status(200).send(consultarDatosServicioSocial)
+  }
+  const consultarComentariosResidencias = async (req, res) => {
+    const consultarDatosResidencias = await services.consultarComentariosResidencias();
+    res.status(200).send(consultarDatosResidencias)
+  }
+  const consultarComentariosIdiomas = async (req, res) => {
+    const consultarDatosIdiomas = await services.consultarComentariosIdiomas();
+    res.status(200).send(consultarDatosIdiomas)
+  }
+  const consultarComentariosCafeteria1 = async (req, res) => {
+    const consultarDatosCafeteria1 = await services.consultarComentariosCafeteria1();
+    res.status(200).send(consultarDatosCafeteria1)
+  }
+  const consultarComentariosCafeteria2 = async (req, res) => {
+    const consultarDatosCafeteria2 = await services.consultarComentariosCafeteria2();
+    res.status(200).send(consultarDatosCafeteria2)
+  }
+  const consultarComentariosCajas = async (req, res) => {
+    const consultarDatosCajas = await services.consultarComentariosCajas();
+    res.status(200).send(consultarDatosCajas)
+  }
+  const consultarComentariosCoordinadorDeCarreras = async (req, res) => {
+    const consultarDatosCoordinadorDeCarreras = await services.consultarComentariosCoordinadorDeCarreras();
+    res.status(200).send(consultarDatosCoordinadorDeCarreras)
+  }
+  const consultarComentariosBecas = async (req, res) => {
+    const consultarDatosBecas = await services.consultarComentariosBecas();
+    res.status(200).send(consultarDatosBecas)
+  }
+  const consultarComentariosCentroDeCopiado = async (req, res) => {
+    const consultarDatosCentroDeCopiado = await services.consultarComentariosCentroDeCopiado();
+    res.status(200).send(consultarDatosCentroDeCopiado)
+  }
+  const consultarComentariosPsicologico = async (req, res) => {
+    const consultarDatosPsicologico = await services.consultarComentariosPsicologico();
+    res.status(200).send(consultarDatosPsicologico)
+  }
+  const consultarComentariosMedico = async (req, res) => {
+    const consultarDatosMedico = await services.consultarComentariosMedico();
+    res.status(200).send(consultarDatosMedico)
+  }
+  const consultarComentariosAsesoriasAcademicas = async (req, res) => {
+    const consultarDatosAsesoriasAcademicas = await services.consultarComentariosAsesoriasAcademicas();
+    res.status(200).send(consultarDatosAsesoriasAcademicas)
+  }
+
   export const methods = {
     consultarDatosClubes,
     consultarDatosControlEscolar,
@@ -103,5 +177,22 @@ const consultarDatosClubes = async (req, res) => {
     consultarDatosMedico,
     consultarDatosAsesoriasAcademicas,
     consultarAlumnos,
-    consultarTotalAlumnos
+    consultarTotalAlumnos,
+    consultarComentariosClubes,
+    consultarComentariosControlEscolar,
+    consultarComentariosTutorias,
+    consultarComentariosBiblioteca,
+    consultarComentariosCentroDeComputo,
+    consultarComentariosServicioSocial,
+    consultarComentariosResidencias,
+    consultarComentariosIdiomas,
+    consultarComentariosCafeteria1,
+    consultarComentariosCafeteria2,
+    consultarComentariosCajas,
+    consultarComentariosCoordinadorDeCarreras,
+    consultarComentariosBecas,
+    consultarComentariosCentroDeCopiado,
+    consultarComentariosPsicologico,
+    consultarComentariosMedico,
+    consultarComentariosAsesoriasAcademicas
   }

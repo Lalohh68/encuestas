@@ -150,7 +150,142 @@ async function consultarDatosClubes() {
     
       return await result
   }
-
+  async function consultarComentariosClubes() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM clubes where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosControlEscolar() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM control_escolar where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosTutorias() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM tutorias where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosBiblioteca() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM biblioteca where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCentroDeComputo() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM centro_computo where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosServicioSocial() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM servicio_social where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosResidencias() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM residencias where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosIdiomas() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM idiomas where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCafeteria1() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM cafeteria_1 where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCafeteria2() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM cafeteria_2 where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCajas() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM cajas where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCoordinadorDeCarreras() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM coordinador_carreras where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosBecas() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM becas where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosCentroDeCopiado() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM centro_copiado where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosPsicologico() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM psicologico where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosMedico() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM medico where length(comentarios)>2`); 
+    
+      return await result
+  }
+  async function consultarComentariosAsesoriasAcademicas() {
+   
+    const connection = await getConnection();
+    const result = await connection.query(
+        `SELECT comentarios FROM asesorias_academicas where length(comentarios)>2`); 
+    
+      return await result
+  }
 export {
     consultarDatosClubes,
     consultarDatosControlEscolar,
@@ -171,5 +306,22 @@ export {
     consultarDatosAsesoriasAcademicas,
     consultarCarrera,
     consultarAlumnos,
-    consultarTotalAlumnos
+    consultarTotalAlumnos,
+    consultarComentariosClubes,
+    consultarComentariosControlEscolar,
+    consultarComentariosTutorias,
+    consultarComentariosBiblioteca,
+    consultarComentariosCentroDeComputo,
+    consultarComentariosServicioSocial,
+    consultarComentariosResidencias,
+    consultarComentariosIdiomas,
+    consultarComentariosCafeteria1,
+    consultarComentariosCafeteria2,
+    consultarComentariosCajas,
+    consultarComentariosCoordinadorDeCarreras,
+    consultarComentariosBecas,
+    consultarComentariosCentroDeCopiado,
+    consultarComentariosPsicologico,
+    consultarComentariosMedico,
+    consultarComentariosAsesoriasAcademicas
 }

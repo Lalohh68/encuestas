@@ -10,6 +10,7 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['../styles/admin.component.scss']
 })
 export class BecasComponent implements OnInit {
+  comentarios:any=[]
   becas:any=[]
   total=0
   satisfechoHorario:number=0
@@ -94,7 +95,7 @@ export class BecasComponent implements OnInit {
     
       }
     );
-   
+
   }
   
 }

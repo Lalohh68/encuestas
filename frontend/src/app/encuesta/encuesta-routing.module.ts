@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
-import {ExtraescolaresComponent} from './extraescolares/extraescolares.component'
+import { ExtraescolaresComponent } from './extraescolares/extraescolares.component'
 import { StudentsComponent } from '../layouts/students/students.component';
 import { ControlEscolarComponent } from './control-escolar/control-escolar.component';
 import { TutoriasComponent } from './tutorias/tutorias.component';
@@ -21,8 +21,10 @@ import { BecasComponent } from './becas/becas.component';
 import { AsesoriasAcademicasComponent } from './asesorias-academicas/asesorias-academicas.component';
 import { GraficasComponent } from "../encuestas/graficas/graficas.component";
 import { TablaComponent } from "../encuestas/tabla/tabla.component";
+import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 
 export const EncuestaRoutingModule: Routes = [
+ /*
     {
         path: 'encuesta',
         redirectTo: 'encuesta/inicio',
@@ -35,7 +37,9 @@ export const EncuestaRoutingModule: Routes = [
           {
             path:'inicio',
             component: InicioComponent
-          },
+          }
+         
+          ,
           {
             path:'clubes',
             component: ExtraescolaresComponent
@@ -117,10 +121,11 @@ export const EncuestaRoutingModule: Routes = [
         ]
 
          }
-      //,{
-      //   path: '**',
-      //   redirectTo: 'inicio'
-      // }
+      ,{
+         path: '**',
+         redirectTo: 'inicio'
+       }
+  */    
 ];
 
 

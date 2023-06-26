@@ -67,7 +67,7 @@ export class Cafeteria1Component implements OnInit {
     if (this.form.valid || this.isEnabled == false) {
       this.cafeteria1!= this.form.value;
       this.navigationExtras.state=this.alumno;
-      this.sendEncuestaCafeteria2(this.cafeteria1)
+      this.sendEncuestaCafeteria1(this.cafeteria1)
       this.router.navigate(['encuesta/cafeteria_2'],this.navigationExtras);
     } else {
       this.matError=true;
@@ -86,7 +86,7 @@ export class Cafeteria1Component implements OnInit {
     });
   }
 
-  sendEncuestaCafeteria2(cafeteria1:encuesta):void{
+  sendEncuestaCafeteria1(cafeteria1:encuesta):void{
     if (this.isEnabled == true) {
       this.encuestaService.setEncuestaCafeteria1(cafeteria1)
     }

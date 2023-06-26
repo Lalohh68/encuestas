@@ -1,0 +1,33 @@
+<app-coordinador-de-carreras class="row mb-5"></app-coordinador-de-carreras>
+<mat-accordion>
+         
+    <mat-expansion-panel class="py-2 mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h2 class="fw-semibold ">Comentarios</h2>
+          
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      <div class="container mt-5 text-center">
+      <div class="row ">
+            
+              <div class="col-12 ">
+                <table id="datatableComentarios" class="display cell-border" style="width:100%"  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                    <thead >
+                      <tr>
+                        <th class="text-center border column-primary text-white">Comentarios</th>
+                     
+                      </tr>
+                    </thead>
+                        <tbody>
+                          <tr *ngFor="let comentario of comentarios" style="cursor: pointer" >
+                            <td class="text-center">{{comentario.comentarios}}</td>
+                          </tr>
+                        </tbody>
+                  </table>
+              </div>
+           </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>

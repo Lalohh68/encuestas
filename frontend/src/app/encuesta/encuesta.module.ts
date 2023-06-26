@@ -44,6 +44,7 @@ import {MatTableModule} from '@angular/material/table';
 import {TablaComponent} from '../encuestas/tabla/tabla.component';
 import { StudentsComponent } from '../layouts/students/students.component';
 import {SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 @NgModule({
   
   imports: [
@@ -86,7 +87,8 @@ import {SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     PsicologicoComponent,
     MedicoComponent,
     AsesoriasAcademicasComponent,
-    TablaComponent
+    TablaComponent,
+    NoDisponibleComponent
   ],
   bootstrap: [EncuestaModule]
 })
