@@ -24,7 +24,7 @@ import { TablaComponent } from "../encuestas/tabla/tabla.component";
 import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 
 export const EncuestaRoutingModule: Routes = [
- /*
+ 
     {
         path: 'encuesta',
         redirectTo: 'encuesta/inicio',
@@ -125,7 +125,7 @@ export const EncuestaRoutingModule: Routes = [
          path: '**',
          redirectTo: 'inicio'
        }
-  */    
+  
 ];
 
 

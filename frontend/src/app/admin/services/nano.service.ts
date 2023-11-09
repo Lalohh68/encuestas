@@ -13,7 +13,7 @@ export class NanoService{
     constructor(private http: HttpClient) {
 
     }
-    API_URI = 'http://18.222.161.115:3000/api/nano/';
+    API_URI = 'http://localhost:3000/api/nano/';
     
 
     dataClubes() {
